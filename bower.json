@@ -1,0 +1,13 @@
+{
+  "name": "collected.prokids",
+  "version": "1.3.3",
+  "main": "",
+  "ignore": [
+    "source",
+    ".gitignore",
+    ".idea",
+    "bower.json",
+    "gulpfile.js",
+    "package.json"
+  ]
+}

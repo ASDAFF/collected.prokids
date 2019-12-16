@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS b_collected_daysarticle2_two;
