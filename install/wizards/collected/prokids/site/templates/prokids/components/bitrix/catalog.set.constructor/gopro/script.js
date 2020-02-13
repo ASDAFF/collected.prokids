@@ -1,6 +1,6 @@
-var RSGoPro_SetBuy1Click = false;
+var CollectJS_SetBuy1Click = false;
 
-function RSGoPro_OnOfferChangeDetailSet($elementObj)
+function CollectJS_OnOfferChangeDetailSet($elementObj)
 {
 	var finedOfferID = $elementObj.find('.js-add2basketpid').val();
 	var element_id = $elementObj.data('elementid');
@@ -25,11 +25,11 @@ function RSGoPro_OnOfferChangeDetailSet($elementObj)
 		}
 		
 		// hide/show tab switcher
-		RSGoPro_SetHideShowSwitcher();
+		CollectJS_SetHideShowSwitcher();
 	}
 }
 
-function RSGoPro_SetHideShowSwitcher()
+function CollectJS_SetHideShowSwitcher()
 {
 	if( $('.detailtabs').find('.content.set').find('.aroundset:not(.noned)').length>0 )
 	{
@@ -47,10 +47,10 @@ function RSGoPro_SetHideShowSwitcher()
 			}
 		}
 	}
-	RSGoPro_ScrollReinit('.set_jscrollpane');
+	CollectJS_ScrollReinit('.set_jscrollpane');
 }
 
-function RSGoPro_SetRecalcPrices($jsSet)
+function CollectJS_SetRecalcPrices($jsSet)
 {
 	var sumPrice = 0,sumOldPrice = 0,sumDiffDiscountPrice = 0;
 	$jsSet.find('.items.line1').find('.js-element').each(function(i){
@@ -70,7 +70,7 @@ function RSGoPro_SetRecalcPrices($jsSet)
 		},
 		function(result)
 		{
-			RSGoPro_Area2Darken( $jsSet );
+			CollectJS_Area2Darken( $jsSet );
 			var json = JSON.parse(result);
 			if(json.formatSum)
 			{
@@ -91,7 +91,7 @@ function RSGoPro_SetRecalcPrices($jsSet)
 		}
 	);
 }
-function RSGoPro_SetAddRemoveItem($link)
+function CollectJS_SetAddRemoveItem($link)
 {
 	var maxInSet = 4;
 	var $jsSet = $link.parents('.js-set');
@@ -100,23 +100,23 @@ function RSGoPro_SetAddRemoveItem($link)
 	var productID = $elementObj.data('elementid');
 	if( $link.hasClass('in') ) // was in
 	{
-		RSGoPro_Area2Darken( $jsSet,'animashka' );
+		CollectJS_Area2Darken( $jsSet,'animashka' );
 		$jsSet.find('.items.line1').find('.js-elementid'+productID).remove();
 		$link.removeClass('in');
-		RSGoPro_SetRecalcPrices($jsSet);
+		CollectJS_SetRecalcPrices($jsSet);
 	} else if(inSetCount<maxInSet) { // was out
-		RSGoPro_Area2Darken( $jsSet,'animashka' );
+		CollectJS_Area2Darken( $jsSet,'animashka' );
 		$link.addClass('in');
 		$jsSet.find('.items.line1').find('.sliderin').append( $jsSet.find('.items.line2').find('.js-elementid'+productID).clone() );
-		RSGoPro_SetRecalcPrices($jsSet);
+		CollectJS_SetRecalcPrices($jsSet);
 	}
-	RSGoPro_ScrollReinit('.set_jscrollpane');
+	CollectJS_ScrollReinit('.set_jscrollpane');
 }
 
 $(document).ready(function(){
 	
 	// hide/show switcher
-	RSGoPro_SetHideShowSwitcher();
+	CollectJS_SetHideShowSwitcher();
 	
 	// jScrollPane -> items
 	var $aroundSet = $('.detailtabs .aroundset');
@@ -132,16 +132,16 @@ $(document).ready(function(){
 		elW = $(this).find('.line2 .sliderin .js-element').filter(':first').outerWidth(true);
 		$(this).find('.line2 .sliderin').css({width:(cnt*elW)+'px'});
 	});
-	RSGoPro_ScrollInit('.set_jscrollpane');
+	CollectJS_ScrollInit('.set_jscrollpane');
 	$(window).resize(function(){
-		RSGoPro_ScrollReinit('.set_jscrollpane');
+		CollectJS_ScrollReinit('.set_jscrollpane');
 	});
 	
 	// massadd2basket
 	$(document).on('click','.js-set .massadd2basket', function(){
 		var $jsSet = $(this).parents('.js-set');
-		RSGoPro_Area2Darken( $jsSet.find('.fullpanel'), 'animashka' );
-		RSGoPro_Area2Darken( $('#header').find('.basketinhead') );
+		CollectJS_Area2Darken( $jsSet.find('.fullpanel'), 'animashka' );
+		CollectJS_Area2Darken( $('#header').find('.basketinhead') );
 		var arSetIDs = new Array();
 		$jsSet.find('.items.line1').find('.js-element').each(function(i){
 			arSetIDs.push( $(this).data('elementid') );
@@ -159,9 +159,9 @@ $(document).ready(function(){
 			function(result)
 			{
 				var json = JSON.parse(result);
-				RSGoPro_PutJSon( json );
-				RSGoPro_Area2Darken( $jsSet.find('.fullpanel') );
-				RSGoPro_Area2Darken( $('#header').find('.basketinhead') );
+				CollectJS_PutJSon( json );
+				CollectJS_Area2Darken( $jsSet.find('.fullpanel') );
+				CollectJS_Area2Darken( $('#header').find('.basketinhead') );
 			}
 		);
 		return false;
@@ -176,7 +176,7 @@ $(document).ready(function(){
 	
 	// checkbox
 	$(document).on('click','.js-set .checkbox', function(){
-		RSGoPro_SetAddRemoveItem( $(this) );
+		CollectJS_SetAddRemoveItem( $(this) );
 		return false;
 	});
 	
@@ -189,42 +189,42 @@ $(document).ready(function(){
 		if( $line2.length>0 )
 		{
 			$line2.toggleClass('noned');
-			RSGoPro_ScrollReinit('.set_jscrollpane');
+			CollectJS_ScrollReinit('.set_jscrollpane');
 		}
 		return false;
 	});
 	
 	// change tab
 	$(document).on('detaltabchange',function(){
-		RSGoPro_ScrollReinit('.set_jscrollpane');
+		CollectJS_ScrollReinit('.set_jscrollpane');
 	});
 	
 	// change offer
-	$(document).on('RSGoProOnOfferChange',function(e,elementObj){
-		RSGoPro_OnOfferChangeDetailSet(elementObj);
+	$(document).on('CollectProOnOfferChange',function(e,elementObj){
+		CollectJS_OnOfferChangeDetailSet(elementObj);
 	});
 	
 	// buy1click
 	$(document).on('click','.buy1click.set',function(e){
-		RSGoPro_SetBuy1Click = true;
+		CollectJS_SetBuy1Click = true;
 	});
 	// buy1click - put data to form
-	$(document).on('RSGoProOnFancyBeforeShow',function(){
-		if(RSGoPro_SetBuy1Click)
+	$(document).on('CollectProOnFancyBeforeShow',function(){
+		if(CollectJS_SetBuy1Click)
 		{
 			var value = '';
-			value += BX.message("RSGoPro_SET_NABOR") + '\n' +
+			value += BX.message("CollectJS_SET_NABOR") + '\n' +
 				'-----------------------------------------------------';
 			$('.aroundset:not(.noned)').find('.items.line1').find('.js-element').each(function(i){
 				value += '\n' +
-					BX.message("RSGoPro_SET_PROD_ID") + ': ' + $(this).data('elementid') + '\n' +
-					BX.message("RSGoPro_SET_PROD_NAME") + ': ' + $(this).data('elementname') + '\n' +
-					BX.message("RSGoPro_SET_PROD_LINK") + ': ' + ( $(this).find('.setitemlink').length>0 ? (window.location.protocol+'//'+window.location.host+$(this).find('.setitemlink').attr('href')) : window.location.href ) + '\n' +
+					BX.message("CollectJS_SET_PROD_ID") + ': ' + $(this).data('elementid') + '\n' +
+					BX.message("CollectJS_SET_PROD_NAME") + ': ' + $(this).data('elementname') + '\n' +
+					BX.message("CollectJS_SET_PROD_LINK") + ': ' + ( $(this).find('.setitemlink').length>0 ? (window.location.protocol+'//'+window.location.host+$(this).find('.setitemlink').attr('href')) : window.location.href ) + '\n' +
 					'-----------------------------------------------------';
 			});
 			
 			$('.fancybox-inner').find('textarea[name="RS_AUTHOR_ORDER_LIST"]').text( value );
 		}
-		RSGoPro_SetBuy1Click = false;
+		CollectJS_SetBuy1Click = false;
 	});
 });

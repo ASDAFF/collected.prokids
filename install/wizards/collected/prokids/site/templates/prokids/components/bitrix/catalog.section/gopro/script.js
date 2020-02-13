@@ -1,6 +1,6 @@
-var RSGoPro_Hider_called = false;
+var CollectJS_Hider_called = false;
 
-function RSGoPro_DetectTable() {
+function CollectJS_DetectTable() {
 	$('.artables').each(function(i){
 		var $artables = $(this);
 		if($artables.outerWidth(true)<$artables.find('.products').outerWidth(true) && !$artables.hasClass('adap'))
@@ -11,8 +11,8 @@ function RSGoPro_DetectTable() {
 }
 
 // hide filter and sorter when goods is empty
-function RSGoPro_Hider() {
-	RSGoPro_Hider_called = true;
+function CollectJS_Hider() {
+	CollectJS_Hider_called = true;
 	$('.sidebar, .mix, .navi, .catalogsorter').hide();
 	$('.catalog .prods').css('marginLeft','0px');
 }
@@ -20,15 +20,15 @@ function RSGoPro_Hider() {
 $(document).ready(function(){
 	
 	// fix tables if stupid styles didnt work
-	RSGoPro_DetectTable();
+	CollectJS_DetectTable();
 	$(window).resize(function(){
-		RSGoPro_DetectTable();
+		CollectJS_DetectTable();
 	});
 	
 	if( $('.prices_jscrollpane').length>0 ) {
-		RSGoPro_ScrollInit('.prices_jscrollpane');
+		CollectJS_ScrollInit('.prices_jscrollpane');
 		$(window).resize(function(){
-			RSGoPro_ScrollReinit('.prices_jscrollpane');
+			CollectJS_ScrollReinit('.prices_jscrollpane');
 		});
 	}
 	
@@ -40,8 +40,8 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	if(RSGoPro_Hider_called) {
-		RSGoPro_Hider();
+	if(CollectJS_Hider_called) {
+		CollectJS_Hider();
 	}
 	
 });

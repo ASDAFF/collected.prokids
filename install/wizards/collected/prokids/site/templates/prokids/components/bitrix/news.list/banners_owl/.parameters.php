@@ -11,73 +11,73 @@ if(!CModule::IncludeModule('collected.devlibrary'))
 $listProp = CollectDevLibParameters::GetTemplateParamsPropertiesList($arCurrentValues['IBLOCK_ID']);
 
 $arTemplateParameters = array(
-	'RSGOPRO_LINK' => array(
-		'NAME' => GetMessage('RSGOPRO_LINK'),
+	'COLLECTPRO_LINK' => array(
+		'NAME' => GetMessage('COLLECTPRO_LINK'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['SNL'],
 	),
-	'RSGOPRO_BANNER_TYPE' => array(
-		'NAME' => GetMessage('RSGOPRO_BANNER_TYPE'),
+	'COLLECTPRO_BANNER_TYPE' => array(
+		'NAME' => GetMessage('COLLECTPRO_BANNER_TYPE'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['SNL'],
 	),
-	'RSGOPRO_BLANK' => array(
-		'NAME' => GetMessage('RSGOPRO_BLANK'),
+	'COLLECTPRO_BLANK' => array(
+		'NAME' => GetMessage('COLLECTPRO_BLANK'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['SNL'],
 	),
-	'RSGOPRO_TITLE1' => array(
-		'NAME' => GetMessage('RSGOPRO_TITLE1'),
+	'COLLECTPRO_TITLE1' => array(
+		'NAME' => GetMessage('COLLECTPRO_TITLE1'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['SNL'],
 	),
-	'RSGOPRO_TITLE2' => array(
-		'NAME' => GetMessage('RSGOPRO_TITLE2'),
+	'COLLECTPRO_TITLE2' => array(
+		'NAME' => GetMessage('COLLECTPRO_TITLE2'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['SNL'],
 	),
-	'RSGOPRO_PRICE' => array(
-		'NAME' => GetMessage('RSGOPRO_PRICE'),
+	'COLLECTPRO_PRICE' => array(
+		'NAME' => GetMessage('COLLECTPRO_PRICE'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['SNL'],
 	),
-	'RSGOPRO_TEXT' => array(
-		'NAME' => GetMessage('RSGOPRO_TEXT'),
+	'COLLECTPRO_TEXT' => array(
+		'NAME' => GetMessage('COLLECTPRO_TEXT'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['SNL'],
 	),
-	'RSGOPRO_CHANGE_SPEED' => array(
-		'NAME' => GetMessage('RSGOPRO_CHANGE_SPEED'),
+	'COLLECTPRO_CHANGE_SPEED' => array(
+		'NAME' => GetMessage('COLLECTPRO_CHANGE_SPEED'),
 		'TYPE' => 'STRING',
 		'DEFAULT' => '2000',
 	),
-	'RSGOPRO_CHANGE_DELAY' => array(
-		'NAME' => GetMessage('RSGOPRO_CHANGE_DELAY'),
+	'COLLECTPRO_CHANGE_DELAY' => array(
+		'NAME' => GetMessage('COLLECTPRO_CHANGE_DELAY'),
 		'TYPE' => 'STRING',
 		'DEFAULT' => '8000',
 	),
-	'RSGOPRO_BANNER_HEIGHT' => array(
-		'NAME' => GetMessage('RSGOPRO_BANNER_HEIGHT'),
+	'COLLECTPRO_BANNER_HEIGHT' => array(
+		'NAME' => GetMessage('COLLECTPRO_BANNER_HEIGHT'),
 		'TYPE' => 'STRING',
 		'DEFAULT' => '402',
 	),
-	'RSGOPRO_BANNER_VIDEO_MP4' => array(
-		'NAME' => GetMessage('RSGOPRO_BANNER_VIDEO_MP4'),
+	'COLLECTPRO_BANNER_VIDEO_MP4' => array(
+		'NAME' => GetMessage('COLLECTPRO_BANNER_VIDEO_MP4'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['F'],
 	),
-	'RSGOPRO_BANNER_VIDEO_WEBM' => array(
-		'NAME' => GetMessage('RSGOPRO_BANNER_VIDEO_WEBM'),
+	'COLLECTPRO_BANNER_VIDEO_WEBM' => array(
+		'NAME' => GetMessage('COLLECTPRO_BANNER_VIDEO_WEBM'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['F'],
 	),
-	'RSGOPRO_BANNER_VIDEO_PIC' => array(
-		'NAME' => GetMessage('RSGOPRO_BANNER_VIDEO_PIC'),
+	'COLLECTPRO_BANNER_VIDEO_PIC' => array(
+		'NAME' => GetMessage('COLLECTPRO_BANNER_VIDEO_PIC'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['F'],
 	),
-	'RSGOPRO_NOT_INCLUDE_OWL_SCRIPTS' => array(
-		'NAME' => GetMessage('RSGOPRO_NOT_INCLUDE_OWL_SCRIPTS'),
+	'COLLECTPRO_NOT_INCLUDE_OWL_SCRIPTS' => array(
+		'NAME' => GetMessage('COLLECTPRO_NOT_INCLUDE_OWL_SCRIPTS'),
 		'TYPE' => 'CHECKBOX',
 		'DEFAULT' => 'N',
 		'VALUE' => 'Y',

@@ -9,7 +9,7 @@ IncludeTemplateLangFile(__FILE__);
 		?></div><!-- /content --><?
 	?></div><!-- /body --><?
 	// scripts
-	?><script type="text/javascript">RSGoPro_SetSet();</script><?
+	?><script type="text/javascript">CollectJS_SetSet();</script><?
 	?><div id="footer" class="footer"><!-- footer --><?
 		?><div class="centering"><?
 			?><div class="centeringin line1 clearfix"><?
@@ -25,7 +25,7 @@ IncludeTemplateLangFile(__FILE__);
 					?></div><?
 					?><div class="contacts clearfix"><?
 						?><div class="phone1"><?
-							?><a class="fancyajax fancybox.ajax recall" href="#SITE_DIR#recall/" title="<?=GetMessage('RSGOPRO.RECALL')?>"><i class="icon pngicons"></i><?=GetMessage('RSGOPRO.RECALL')?></a><?
+							?><a class="fancyajax fancybox.ajax recall" href="#SITE_DIR#recall/" title="<?=GetMessage('COLLECTPRO.RECALL')?>"><i class="icon pngicons"></i><?=GetMessage('COLLECTPRO.RECALL')?></a><?
 							?><div class="phone"><?
 								$APPLICATION->IncludeFile(
 									SITE_TEMPLATE_PATH."/include_areas/footer_phone1.php",
@@ -35,7 +35,7 @@ IncludeTemplateLangFile(__FILE__);
 							?></div><?
 						?></div><?
 						?><div class="phone2"><?
-							?><a class="fancyajax fancybox.ajax feedback" href="#SITE_DIR#feedback/" title="<?=GetMessage('RSGOPRO.FEEDBACK')?>"><i class="icon pngicons"></i><?=GetMessage('RSGOPRO.FEEDBACK')?></a><?
+							?><a class="fancyajax fancybox.ajax feedback" href="#SITE_DIR#feedback/" title="<?=GetMessage('COLLECTPRO.FEEDBACK')?>"><i class="icon pngicons"></i><?=GetMessage('COLLECTPRO.FEEDBACK')?></a><?
 							?><div class="phone"><?
 								$APPLICATION->IncludeFile(
 									SITE_TEMPLATE_PATH."/include_areas/footer_phone2.php",

@@ -2,25 +2,25 @@
  * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-var RSGOPRO_PopupPrefix = 'rsgppopup_',
-	RSGOPRO_DivsLeft = '<div class="outer"><div class="inner">',
-	RSGOPRO_DivsRight = '</div></div>',
-	RSGOPRO_ParentsObj;
+var CollectJS_PopupPrefix = 'rsgppopup_',
+	CollectJS_DivsLeft = '<div class="outer"><div class="inner">',
+	CollectJS_DivsRight = '</div></div>',
+	CollectJS_ParentsObj;
 
-function RSGoPro_OnOfferChangePopup($elementObj) {
+function CollectJS_OnOfferChangePopup($elementObj) {
 	var finedOfferID = $elementObj.find('.js-add2basketpid').val();
 	var element_id = $elementObj.data('elementid');
 	if(finedOfferID>0) {
 		// image
-		if( RSGoPro_OFFERS[element_id].OFFERS[finedOfferID].IMAGES[0].src && 
-			RSGoPro_OFFERS[element_id].OFFERS[finedOfferID].IMAGES[0].src.indexOf("collected_devlibrary_nophoto") < 0 &&
+		if( CollectJS_OFFERS[element_id].OFFERS[finedOfferID].IMAGES[0].src && 
+			CollectJS_OFFERS[element_id].OFFERS[finedOfferID].IMAGES[0].src.indexOf("collected_devlibrary_nophoto") < 0 &&
 			$elementObj.find('.pic img').length>0 ) {
-			$elementObj.find('.pic img').attr('src', RSGoPro_OFFERS[element_id].OFFERS[finedOfferID].IMAGES[0].src );
+			$elementObj.find('.pic img').attr('src', CollectJS_OFFERS[element_id].OFFERS[finedOfferID].IMAGES[0].src );
 		}
 	}
 }
 
-function RSGoProPricesJScrollPaneReinitialize() {
+function CollectProPricesJScrollPaneReinitialize() {
 	setTimeout(function(){ // fix for slow shit
 		var pane2api;
 		$('.prs_jscrollpane').parents('.prices').removeClass('jspHasScroll');
@@ -34,81 +34,81 @@ function RSGoProPricesJScrollPaneReinitialize() {
 	},50);
 }
 
-function RSGoPro_FixPreviewText(element_id) {
+function CollectJS_FixPreviewText(element_id) {
 	var max_h1 = 350;
 	var line_h = 18;
-	var h1 = $('#'+RSGOPRO_PopupPrefix+element_id).find('.block.right').outerHeight(true);
+	var h1 = $('#'+CollectJS_PopupPrefix+element_id).find('.block.right').outerHeight(true);
 	if( h1!=null ) {
 		if( h1>max_h1 ) {
-			var $text = $('#'+RSGOPRO_PopupPrefix+element_id).find('.description').find('.text');
+			var $text = $('#'+CollectJS_PopupPrefix+element_id).find('.description').find('.text');
 			var res = Math.floor( ($text.outerHeight(true)-(h1-max_h1))/line_h )*line_h;
 			$text.css('maxHeight',res+'px');
 		}
 	}
 }
 
-function RSGoPro_GoPopup(element_id,$parentsObj) {
+function CollectJS_GoPopup(element_id,$parentsObj) {
 	element_id = parseInt( element_id );
-	RSGOPRO_ParentsObj = $parentsObj;
+	CollectJS_ParentsObj = $parentsObj;
 	if(element_id>0) {
-		if( $('#'+RSGOPRO_PopupPrefix+element_id).length>0 ) {
-			RSGoPro_ShowPopup(element_id);
+		if( $('#'+CollectJS_PopupPrefix+element_id).length>0 ) {
+			CollectJS_ShowPopup(element_id);
 		} else {
-			RSGoPro_AddPopup(element_id);
+			CollectJS_AddPopup(element_id);
 		}
 	} else {
 		console.warn( 'GoPopup: element_id is empty' );
 	}
 }
 
-function RSGoPro_ShowPopup(element_id) {
-	RSGoPro_ChangePosition(element_id);
-	$('#'+RSGOPRO_PopupPrefix+element_id).fadeIn("fast",function() {
+function CollectJS_ShowPopup(element_id) {
+	CollectJS_ChangePosition(element_id);
+	$('#'+CollectJS_PopupPrefix+element_id).fadeIn("fast",function() {
 		// Animation complete
-		RSGoPro_FixPreviewText(element_id);
-		RSGoPro_SetSet();
-		//RSGoProPricesJScrollPaneReinitialize();
-		RSGoPro_ScrollReinit('.elementpopupinner .prs_jscrollpane', 1);
+		CollectJS_FixPreviewText(element_id);
+		CollectJS_SetSet();
+		//CollectProPricesJScrollPaneReinitialize();
+		CollectJS_ScrollReinit('.elementpopupinner .prs_jscrollpane', 1);
 	});
 }
 
-function RSGoPro_HidePopup(element_id) {
-	$('#'+RSGOPRO_PopupPrefix+element_id).fadeOut("fast",function() {
+function CollectJS_HidePopup(element_id) {
+	$('#'+CollectJS_PopupPrefix+element_id).fadeOut("fast",function() {
 		// Animation complete
 	});
 }
-function RSGoPro_ChangePosition(element_id) {
+function CollectJS_ChangePosition(element_id) {
 	var $jsPos;
-	if( RSGOPRO_ParentsObj.find('td.name').outerWidth(true) > 5 ) {
-		$jsPos = RSGOPRO_ParentsObj.find('.js-position');
+	if( CollectJS_ParentsObj.find('td.name').outerWidth(true) > 5 ) {
+		$jsPos = CollectJS_ParentsObj.find('.js-position');
 	} else {
-		$jsPos = RSGOPRO_ParentsObj.parents('.artables').find('.js-name'+element_id).find('.js-position');
+		$jsPos = CollectJS_ParentsObj.parents('.artables').find('.js-name'+element_id).find('.js-position');
 	}
 	var pos_left = $jsPos.position().left + $jsPos.outerWidth(true) + 20; // 20 - td padding
-	$('#'+RSGOPRO_PopupPrefix+element_id).css({'top':$jsPos.position().top+'px','left':pos_left+'px'});
+	$('#'+CollectJS_PopupPrefix+element_id).css({'top':$jsPos.position().top+'px','left':pos_left+'px'});
 }
 
-function RSGoPro_HideAllPopup() {
+function CollectJS_HideAllPopup() {
 	$('.rsgppopup:visible').fadeOut("fast",function() {
 		// Animation complete
 	});
 }
 
-function RSGoPro_AddPopup(element_id,$parentsObj) {
+function CollectJS_AddPopup(element_id,$parentsObj) {
 	var url = SITE_DIR+SITE_CATALOG_PATH+'/?AJAX_CALL=Y&action=rsgppopup&element_id='+element_id+'';
-	var html = '<div id="'+RSGOPRO_PopupPrefix+element_id+'" class="rsgppopup" style="display:none;">'+RSGOPRO_DivsLeft+'<div class="loading"></div>'+RSGOPRO_DivsRight+'</div>';
+	var html = '<div id="'+CollectJS_PopupPrefix+element_id+'" class="rsgppopup" style="display:none;">'+CollectJS_DivsLeft+'<div class="loading"></div>'+CollectJS_DivsRight+'</div>';
 	$('body').append( html );
-	RSGoPro_ShowPopup(element_id);
+	CollectJS_ShowPopup(element_id);
 	$.ajax({
 		url: url
 	}).done(function(data){
-		$('#'+RSGOPRO_PopupPrefix+element_id).find('.inner').html( data );
-		RSGoPro_SetSet();
-		RSGoPro_FixPreviewText(element_id);
+		$('#'+CollectJS_PopupPrefix+element_id).find('.inner').html( data );
+		CollectJS_SetSet();
+		CollectJS_FixPreviewText(element_id);
 		if( $('.elementpopupinner .prs_jscrollpane').length>0 ) {
-			RSGoPro_ScrollInit('.elementpopupinner .prs_jscrollpane');
+			CollectJS_ScrollInit('.elementpopupinner .prs_jscrollpane');
 			$(window).resize(function(){
-				RSGoPro_ScrollReinit('.elementpopupinner .prs_jscrollpane', 1);
+				CollectJS_ScrollReinit('.elementpopupinner .prs_jscrollpane', 1);
 			});
 		}
 	}).fail(function() {
@@ -121,25 +121,25 @@ $(document).ready(function(){
 	// listeners
 	$(document).on('keydown',function(e){
 		if(e.keyCode==27) { // esc
-			RSGoPro_HideAllPopup();
+			CollectJS_HideAllPopup();
 		}
 	});
 	$(document).on('click',function(e){
 		if( $(e.target).parents('.rsgppopup').length>0 ) {
 			
 		} else {
-			RSGoPro_HideAllPopup();
+			CollectJS_HideAllPopup();
 		}
 	});
 	
 	// window.resize
 	$(window).resize(function(){
-		RSGoPro_HideAllPopup();
+		CollectJS_HideAllPopup();
 	});
 	
 	// change offer
-	$(document).on('RSGoProOnOfferChange',function(e,elementObj){
-		RSGoPro_OnOfferChangePopup(elementObj);
+	$(document).on('CollectProOnOfferChange',function(e,elementObj){
+		CollectJS_OnOfferChangePopup(elementObj);
 	});
 	
 });

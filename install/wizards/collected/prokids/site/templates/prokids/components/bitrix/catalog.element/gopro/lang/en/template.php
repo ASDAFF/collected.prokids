@@ -49,11 +49,11 @@ $MESS['CHEAPER'] = 'Want cheaper?';
 
 $MESS['GO2DETAILFROMPREVIEW'] = 'More';
 
-$MESS['RSGOPRO.DETAIL_PROD_ID'] = 'Product ID';
-$MESS['RSGOPRO.DETAIL_PROD_NAME'] = 'Product name';
-$MESS['RSGOPRO.DETAIL_PROD_LINK'] = 'Link to product';
+$MESS['COLLECTPRO.DETAIL_PROD_ID'] = 'Product ID';
+$MESS['COLLECTPRO.DETAIL_PROD_NAME'] = 'Product name';
+$MESS['COLLECTPRO.DETAIL_PROD_LINK'] = 'Link to product';
 
-$MESS['RSGOPRO.DETAIL_CHEAPER_TITLE'] = 'Want cheaper form';
+$MESS['COLLECTPRO.DETAIL_CHEAPER_TITLE'] = 'Want cheaper form';
 
 // component_epilog
 $MESS['TABS_DETAIL_TEXT'] = 'Description';

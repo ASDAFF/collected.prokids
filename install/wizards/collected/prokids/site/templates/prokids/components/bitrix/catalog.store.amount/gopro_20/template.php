@@ -1,8 +1,8 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
 
-if( !function_exists('RSGoPro_GetResult20') ) {
-	function RSGoPro_GetResult20($amount,$arParams) {
+if( !function_exists('CollectJS_GetResult20') ) {
+	function CollectJS_GetResult20($amount,$arParams) {
 		$return = 0;
 		if($arParams['GOPRO_USE_MIN_AMOUNT']=='Y') {
 			if( $amount<1 ) {
@@ -60,7 +60,7 @@ if( !function_exists('RSGoPro_GetResult20') ) {
 								if( in_array('DESCRIPTION',$arParams['FIELDS'])) {
 									?><td><?=$arStore['DESCRIPTION']?></td><?
 								}
-								?><td class="amount"><?=RSGoPro_GetResult20($arResult['JS']['SKU'][$arParams['FIRST_ELEMENT_ID']][$arStore['ID']],$arParams)?></td><?
+								?><td class="amount"><?=CollectJS_GetResult20($arResult['JS']['SKU'][$arParams['FIRST_ELEMENT_ID']][$arStore['ID']],$arParams)?></td><?
 							?></tr><?
 						}
 					?></table><?
@@ -103,7 +103,7 @@ if( !function_exists('RSGoPro_GetResult20') ) {
 								if( in_array('DESCRIPTION',$arParams['FIELDS'])) {
 									?><td><?=$arStore['DESCRIPTION']?></td><?
 								}
-								?><td class="amount"><?=RSGoPro_GetResult20($arStore['AMOUNT'],$arParams)?></td><?
+								?><td class="amount"><?=CollectJS_GetResult20($arStore['AMOUNT'],$arParams)?></td><?
 							?></tr><?
 						}
 					?></table><?
@@ -114,7 +114,7 @@ if( !function_exists('RSGoPro_GetResult20') ) {
 ?></div><?
 
 ?><script>
-RSGoPro_STOCK = {
+CollectJS_STOCK = {
 	'<?=$arParams['~ELEMENT_ID']?>' : {
 		'QUANTITY' : <?=json_encode($arParams['DATA_QUANTITY'])?>,
 		'JS' : <?=CUtil::PhpToJSObject( $arResult['JS'] )?>,

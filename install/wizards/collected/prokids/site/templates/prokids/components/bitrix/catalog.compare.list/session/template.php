@@ -6,4 +6,4 @@ foreach($arResult as $arItem)
 {
 	$arrIDs[$arItem['ID']] = 'Y';
 }
-?><script>RSGoPro_COMPARE = <?if(count($arrIDs)>0) { echo json_encode($arrIDs); } else { echo '{}'; }?>;RSGoPro_SetCompared();</script><?
+?><script>CollectJS_COMPARE = <?if(count($arrIDs)>0) { echo json_encode($arrIDs); } else { echo '{}'; }?>;CollectJS_SetCompared();</script><?

@@ -2,6 +2,6 @@
 IncludeTemplateLangFile(__FILE__);
 
 $arTemplate = array(
-	"NAME" => GetMessage('RSGOPRO.TEMPLATE_NAME'),
-	"DESCRIPTION" => GetMessage('RSGOPRO.TEMPLATE_DESCRIPTION')
+	"NAME" => GetMessage('COLLECTPRO.TEMPLATE_NAME'),
+	"DESCRIPTION" => GetMessage('COLLECTPRO.TEMPLATE_DESCRIPTION')
 );

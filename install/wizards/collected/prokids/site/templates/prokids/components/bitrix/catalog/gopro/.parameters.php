@@ -14,8 +14,8 @@ $listProp = CollectDevLibParameters::GetTemplateParamsPropertiesList($arCurrentV
 $arCatalog = CCatalog::GetByID($arCurrentValues['IBLOCK_ID']);
 
 $arViewModeList = array(
-	'VIEW_SECTIONS' => GetMessage('RSGOPRO_VIEW_SECTIONS'),
-	'VIEW_ELEMENTS' => GetMessage('RSGOPRO_VIEW_ELEMENTS')
+	'VIEW_SECTIONS' => GetMessage('COLLECTPRO_VIEW_SECTIONS'),
+	'VIEW_ELEMENTS' => GetMessage('COLLECTPRO_VIEW_ELEMENTS')
 );
 
 $arPrice = array();
@@ -55,7 +55,7 @@ $arStoresTemplate = array(
 $arTemplateParameters = array(
 	'SECTIONS_VIEW_MODE' => array(
 		'PARENT' => 'BASE',
-		'NAME' => GetMessage('RSGOPRO_VIEW_MODE'),
+		'NAME' => GetMessage('COLLECTPRO_VIEW_MODE'),
 		'TYPE' => 'LIST',
 		'VALUES' => $arViewModeList,
 		'MULTIPLE' => 'N',

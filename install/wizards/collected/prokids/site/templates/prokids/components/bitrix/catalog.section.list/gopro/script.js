@@ -1,4 +1,4 @@
-function RSGOPRO_SetHeight()
+function CollectJS_SetHeight()
 {
 	setTimeout(function(){
 		// reset
@@ -32,14 +32,14 @@ function RSGOPRO_SetHeight()
 }
 
 $(document).ready(function(){
-	RSGOPRO_SetHeight();
-	$(window).bind('resize', RSGOPRO_SetHeight);
+	CollectJS_SetHeight();
+	$(window).bind('resize', CollectJS_SetHeight);
 	
 	$(window).load(function(){
-		RSGOPRO_SetHeight();
+		CollectJS_SetHeight();
 		
 		setTimeout(function(){ // fix for slow shit
-			RSGOPRO_SetHeight();
+			CollectJS_SetHeight();
 		},50);
 	});
 });

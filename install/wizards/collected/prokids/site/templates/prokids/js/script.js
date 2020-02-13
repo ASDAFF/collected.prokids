@@ -2,9 +2,9 @@
  * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-var RSGoPro_AJAXPAGES_processing = false;
+var CollectJS_AJAXPAGES_processing = false;
 
-function RSGoPro_PutJSon(json,$linkObj,ajaxpagesid) {
+function CollectJS_PutJSon(json,$linkObj,ajaxpagesid) {
 	if(json.TYPE=='OK') {
 		if(ajaxpagesid && ajaxpagesid==json.IDENTIFIER) {
 			if(json.HTML.catalognames) {
@@ -37,7 +37,7 @@ function RSGoPro_PutJSon(json,$linkObj,ajaxpagesid) {
 }
 
 // AjaxPages
-function RSGoPro_AjaxPages(linkObj) {
+function CollectJS_AjaxPages(linkObj) {
 	if(linkObj.parent().hasClass('animation')) {
 		linkObj.parent().removeClass('animation');
 		// if that was table - repaint lines
@@ -62,7 +62,7 @@ function RSGoPro_AjaxPages(linkObj) {
 }
 
 // Area2Darken
-function RSGoPro_Area2Darken(areaObj, anim, options) {
+function CollectJS_Area2Darken(areaObj, anim, options) {
 	var opt = $.extend( {
 		'progressLeft': false,
 		'progressTop': false,
@@ -80,59 +80,59 @@ function RSGoPro_Area2Darken(areaObj, anim, options) {
 	}
 }
 
-function RSGoPro_SetSet() {
-	RSGoPro_SetFavorite();
-	RSGoPro_SetCompared();
-	RSGoPro_SetInBasket();
+function CollectJS_SetSet() {
+	CollectJS_SetFavorite();
+	CollectJS_SetCompared();
+	CollectJS_SetInBasket();
 }
 // set favorite
-function RSGoPro_SetFavorite() {
+function CollectJS_SetFavorite() {
 	$('.add2favorite').removeClass('in');
-	for(element_id in RSGoPro_FAVORITE) {
-		if(RSGoPro_FAVORITE[element_id]=='Y' && $('.js-elementid'+element_id).find('.add2favorite').length>0) {
+	for(element_id in CollectJS_FAVORITE) {
+		if(CollectJS_FAVORITE[element_id]=='Y' && $('.js-elementid'+element_id).find('.add2favorite').length>0) {
 			$('.js-elementid'+element_id).find('.add2favorite').addClass('in');
 		}
 	}
 }
 
 // set compare
-function RSGoPro_SetCompared() {
-	$('.add2compare').removeClass('in').html( '<i class="icon pngicons"></i>'+BX.message('RSGOPRO_JS_COMPARE') );;
-	for(element_id in RSGoPro_COMPARE) {
-		if(RSGoPro_COMPARE[element_id]=='Y' && $('.js-elementid'+element_id).find('.add2compare').length>0) {
-			$('.js-elementid'+element_id).find('.add2compare').addClass('in').html( '<i class="icon pngicons"></i>'+BX.message('RSGOPRO_JS_COMPARE_IN') );
+function CollectJS_SetCompared() {
+	$('.add2compare').removeClass('in').html( '<i class="icon pngicons"></i>'+BX.message('COLLECTPRO_JS_COMPARE') );;
+	for(element_id in CollectJS_COMPARE) {
+		if(CollectJS_COMPARE[element_id]=='Y' && $('.js-elementid'+element_id).find('.add2compare').length>0) {
+			$('.js-elementid'+element_id).find('.add2compare').addClass('in').html( '<i class="icon pngicons"></i>'+BX.message('COLLECTPRO_JS_COMPARE_IN') );
 		}
 	}
 }
 
 // set in basket
-function RSGoPro_SetInBasket() {
+function CollectJS_SetInBasket() {
 	$('.add2basketform').removeClass('in');
-	for(element_id in RSGoPro_INBASKET) {
-		if(RSGoPro_INBASKET[element_id]=='Y' && $(".js-add2basketpid[value='"+element_id+"']").length>0) {
+	for(element_id in CollectJS_INBASKET) {
+		if(CollectJS_INBASKET[element_id]=='Y' && $(".js-add2basketpid[value='"+element_id+"']").length>0) {
 			$('.js-add2basketpid[value="'+element_id+'"]').parents('.add2basketform').addClass('in');
 		}
-		if( parseInt(RSGoPro_INBASKET[element_id])>0 && $('.products').find('.js-add2basketform'+RSGoPro_INBASKET[element_id]).length>0 ) {
-			$('.products').find('.js-add2basketform'+RSGoPro_INBASKET[element_id]).addClass('in');
+		if( parseInt(CollectJS_INBASKET[element_id])>0 && $('.products').find('.js-add2basketform'+CollectJS_INBASKET[element_id]).length>0 ) {
+			$('.products').find('.js-add2basketform'+CollectJS_INBASKET[element_id]).addClass('in');
 		}
 	}
 }
 
 // AJAXPAGES
-function RSGoPro_AJAXPAGESAuto() {
+function CollectJS_AJAXPAGESAuto() {
 	$('.ajaxpages.auto').each(function(i){
 		var porog = 200,
 			$ajaxpObj = $(this);
 		var ajaxpOffsetTop = $ajaxpObj.offset().top,
 			window_height = $(window).height();
-		if( porog>(ajaxpOffsetTop-window.pageYOffset-window_height) && !RSGoPro_AJAXPAGES_processing && !$ajaxpObj.hasClass('') ) {
+		if( porog>(ajaxpOffsetTop-window.pageYOffset-window_height) && !CollectJS_AJAXPAGES_processing && !$ajaxpObj.hasClass('') ) {
 			$ajaxpObj.find('a').trigger('click');
 		}
 	});
 }
 
 // TIMER
-function RSGoPro_TIMER() {	
+function CollectJS_TIMER() {
 	var datenow = new Date;
 	datenow = (Date.parse(datenow))/1000;
 	$('.timer').each(function(index){			
@@ -184,7 +184,7 @@ function RSGoPro_TIMER() {
 }
 
 // phone mask
-function RSGoPro_InitMaskPhone() {
+function CollectJS_InitMaskPhone() {
 	if( $('.maskPhone').length>0 ) {
 		$(".maskPhone").mask("+7 (999) 999-9999");
 	}
@@ -192,10 +192,10 @@ function RSGoPro_InitMaskPhone() {
 
 $(document).ready(function(){
 	setInterval(function() {
-		RSGoPro_TIMER();
+		CollectJS_TIMER();
 	}, 1000);
 
-	$(document).on('RSGoProOnOfferChange', function(e, obj){
+	$(document).on('CollectProOnOfferChange', function(e, obj){
 		if($(obj).find('.timers').length >0){
 			if($(obj).find('.intimer').data('autoreuse') == 'N'){
 				var dateNowOfferChange = new Date;
@@ -232,26 +232,26 @@ $(document).ready(function(){
 		if( id>0 ) {
 			var seriData = $(this).serialize();
 			var url = SITE_DIR+SITE_CATALOG_PATH+'/?'+seriData+'&AJAX_CALL=Y&action=add2basket';
-			RSGoPro_Area2Darken( $formObj );
-			RSGoPro_Area2Darken( $('#header').find('.basketinhead') );
+			CollectJS_Area2Darken( $formObj );
+			CollectJS_Area2Darken( $('#header').find('.basketinhead') );
 			$.getJSON(url, {}, function(json){
 				if(json.TYPE=='OK') {
-					RSGoPro_INBASKET[id] = "Y";
-					RSGoPro_SetInBasket();
-					RSGoPro_PutJSon( json );
+					CollectJS_INBASKET[id] = "Y";
+					CollectJS_SetInBasket();
+					CollectJS_PutJSon( json );
 				} else {
 					console.warn( 'add2basket - error responsed' );
 				}
 			}).fail(function(data){
 				console.warn( 'add2basket - can\'t load json' );
 			}).always(function(){
-				RSGoPro_Area2Darken( $formObj );
-				RSGoPro_Area2Darken( $('#header').find('.basketinhead') );
+				CollectJS_Area2Darken( $formObj );
+				CollectJS_Area2Darken( $('#header').find('.basketinhead') );
 			});
 		} else if( $formObj.parents('.elementpopup').length<1 ) {
 			// id = 0 -> Show popup (if PC)
 			if(!CollectDevLib_PHONETABLET) {
-				RSGoPro_GoPopup( $formObj.parents('.js-element').data('elementid'), $formObj.parents('.js-element') );
+				CollectJS_GoPopup( $formObj.parents('.js-element').data('elementid'), $formObj.parents('.js-element') );
 			} else {
 				if( $formObj.parents('.js-element').find('.js-detaillink').length>0 ) {
 					window.location = 'http://' + window.location.hostname + $formObj.parents('.js-element').find('.js-detaillink').attr('href')
@@ -271,8 +271,8 @@ $(document).ready(function(){
 		var id = parseInt( $linkObj.parents('.js-element').data('elementid') );
 		var action = '';
 		if(id>0) {
-			RSGoPro_Area2Darken($('.add2compare'));
-			if( RSGoPro_COMPARE[id]=='Y' ) { // delete from compare
+			CollectJS_Area2Darken($('.add2compare'));
+			if( CollectJS_COMPARE[id]=='Y' ) { // delete from compare
 				action = 'DELETE_FROM_COMPARE_LIST';
 			} else {
 				action = 'ADD_TO_COMPARE_LIST';
@@ -281,12 +281,12 @@ $(document).ready(function(){
 			$.getJSON(url, {}, function(json){
 				if(json.TYPE=="OK")
 				{
-					RSGoPro_PutJSon(json);
+					CollectJS_PutJSon(json);
 					if( action=='DELETE_FROM_COMPARE_LIST' ) // delete from compare
 					{
-						delete RSGoPro_COMPARE[id];
+						delete CollectJS_COMPARE[id];
 					} else { // add to compare
-						RSGoPro_COMPARE[id] = 'Y';
+						CollectJS_COMPARE[id] = 'Y';
 					}
 				} else {
 					console.warn( 'compare - error responsed' );
@@ -294,8 +294,8 @@ $(document).ready(function(){
 			}).fail(function(data){
 				console.warn( 'compare - fail request' );
 			}).always(function(){
-				RSGoPro_Area2Darken($('.add2compare'));
-				RSGoPro_SetCompared();
+				CollectJS_Area2Darken($('.add2compare'));
+				CollectJS_SetCompared();
 			});
 		}
 		return false;
@@ -307,17 +307,17 @@ $(document).ready(function(){
 		var id = parseInt( $linkObj.parents('.js-element').data('elementid') );
 		if(id>0)
 		{
-			RSGoPro_Area2Darken($('.add2favorite'));
+			CollectJS_Area2Darken($('.add2favorite'));
 			var url = SITE_DIR+SITE_CATALOG_PATH+'/?AJAX_CALL=Y&action=add2favorite&element_id='+id;
 			$.getJSON(url, {}, function(json){
 				if(json.TYPE=="OK")
 				{
-					RSGoPro_PutJSon(json);
-					if( RSGoPro_FAVORITE[id]=='Y' ) // remove from favorite
+					CollectJS_PutJSon(json);
+					if( CollectJS_FAVORITE[id]=='Y' ) // remove from favorite
 					{
-						delete RSGoPro_FAVORITE[id];
+						delete CollectJS_FAVORITE[id];
 					} else { // add to favorite
-						RSGoPro_FAVORITE[id] = 'Y';
+						CollectJS_FAVORITE[id] = 'Y';
 					}
 				} else {
 					console.warn( 'favorite - error responsed' );
@@ -325,8 +325,8 @@ $(document).ready(function(){
 			}).fail(function(data){
 				console.warn( 'favorite - fail request' );
 			}).always(function(){
-				RSGoPro_Area2Darken($('.add2favorite'));
-				RSGoPro_SetFavorite();
+				CollectJS_Area2Darken($('.add2favorite'));
+				CollectJS_SetFavorite();
 			});
 		}
 		return false;
@@ -344,21 +344,21 @@ $(document).ready(function(){
 		var url = "";
 		
 		if( $('#'+ajaxpagesid).length>0 && navpagenomer<navpagecount && parseInt(navnum)>0 && ajaxurl!="" ) {
-			RSGoPro_AJAXPAGES_processing = true;
-			RSGoPro_AjaxPages( $linkObj );
+			CollectJS_AJAXPAGES_processing = true;
+			CollectJS_AjaxPages( $linkObj );
 			if(ajaxurl.indexOf("?")<1) {
 				url = ajaxurl + '?ajaxpages=Y&ajaxpagesid=' + ajaxpagesid + '&PAGEN_'+navnum+'='+nextpagenomer;
 			} else {
 				url = ajaxurl + '&ajaxpages=Y&ajaxpagesid=' + ajaxpagesid + '&PAGEN_'+navnum+'='+nextpagenomer;
 			}
 			$.getJSON(url, {}, function(json){
-				RSGoPro_PutJSon( json,$linkObj,ajaxpagesid );
+				CollectJS_PutJSon( json,$linkObj,ajaxpagesid );
 			}).fail(function(json){
 				console.warn( 'ajaxpages - error responsed' );
 			}).always(function(){
 				setTimeout(function(){ // fix for slow shit
-					RSGoPro_AJAXPAGES_processing = false;
-					RSGoPro_AjaxPages( $linkObj );
+					CollectJS_AJAXPAGES_processing = false;
+					CollectJS_AjaxPages( $linkObj );
 				},50);
 			});
 		} else {
@@ -379,7 +379,7 @@ $(document).ready(function(){
 	});
 	//$(window).resize(function(){
 	$(window).scroll(function(){
-		RSGoPro_AJAXPAGESAuto();
+		CollectJS_AJAXPAGESAuto();
 	});
 	// /AJAXPAGES
 	
@@ -454,8 +454,8 @@ $(document).ready(function(){
 	});
 	
 	// fancybox -> all
-	var RSGoPro_FancyOptions1 = {}, RSGoPro_FancyOptions2 = {};
-	RSGoPro_FancyOptions1 = {
+	var CollectJS_FancyOptions1 = {}, CollectJS_FancyOptions2 = {};
+	CollectJS_FancyOptions1 = {
 		maxWidth		: 900,
 		maxHeight		: 600,
 		minWidth		: 250,
@@ -475,11 +475,11 @@ $(document).ready(function(){
 			}
 		},
 		beforeLoad		: function(){
-			RSGoPro_HideAllPopup();
+			CollectJS_HideAllPopup();
 		},
 		beforeShow		: function(){
 			$('.fancybox-wrap').css({marginLeft: '-10000px'});
-			$(document).trigger('RSGoProOnFancyBeforeShow');
+			$(document).trigger('CollectProOnFancyBeforeShow');
 		},
 		afterShow		: function(){
 			setTimeout(function(){
@@ -487,19 +487,19 @@ $(document).ready(function(){
 			},50);
 			setTimeout(function(){
 				$('.fancybox-wrap').css({marginLeft: '0px'});
-				RSGoPro_InitMaskPhone();
+				CollectJS_InitMaskPhone();
 			},75);
 		}
 	};
-	$('.fancyajax:not(.big)').fancybox(RSGoPro_FancyOptions1);
-	RSGoPro_FancyOptions2 = $.extend({}, RSGoPro_FancyOptions1);;
-	RSGoPro_FancyOptions2.width = '80%';
-	RSGoPro_FancyOptions2.height = '80%';
-	RSGoPro_FancyOptions2.autoSize = false;
-	RSGoPro_FancyOptions2.autoHeight = true;
-	$('.fancyajax.big').fancybox(RSGoPro_FancyOptions2);
+	$('.fancyajax:not(.big)').fancybox(CollectJS_FancyOptions1);
+	CollectJS_FancyOptions2 = $.extend({}, CollectJS_FancyOptions1);;
+	CollectJS_FancyOptions2.width = '80%';
+	CollectJS_FancyOptions2.height = '80%';
+	CollectJS_FancyOptions2.autoSize = false;
+	CollectJS_FancyOptions2.autoHeight = true;
+	$('.fancyajax.big').fancybox(CollectJS_FancyOptions2);
 
-	RSGoPro_InitMaskPhone();
+	CollectJS_InitMaskPhone();
 
 	$(document).on('focus blur','.dropdown-block .bx-ui-sls-fake',function(){
 		$(this).parents('.dropdown-block').toggleClass('focus');

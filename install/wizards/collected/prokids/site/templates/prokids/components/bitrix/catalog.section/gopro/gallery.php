@@ -297,7 +297,7 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
 					?></table><?
 				?></div><!-- /arproducts --><?
 			?></div><!-- /artables --><?
-			?><script>RSGoPro_DetectTable();</script><?
+			?><script>CollectJS_DetectTable();</script><?
 	}
 	if($arParams['IS_AJAXPAGES']=="Y") {
 		$this->SetViewTarget("catalogajaxpages");

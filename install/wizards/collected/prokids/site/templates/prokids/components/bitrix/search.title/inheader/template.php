@@ -17,8 +17,8 @@ if($arParams["SHOW_INPUT"]!=="N")
 		?><form action="<?=$arResult["FORM_ACTION"]?>"><?
 			?><i class="icon pngicons icon2"></i><?
 			?><i class="icon pngicons icon1"></i><?
-			?><div class="aroundtext"><input class="text" id="<?=$INPUT_ID?>" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off" placeholder="<?=GetMessage("RSGOPRO_PLACEHOLDER")?>" /></div><?
-			?><input class="nonep" type="submit" name="s" value="<?=GetMessage("RSGOPRO_BTN")?>" /><?
+			?><div class="aroundtext"><input class="text" id="<?=$INPUT_ID?>" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off" placeholder="<?=GetMessage("COLLECTPRO_PLACEHOLDER")?>" /></div><?
+			?><input class="nonep" type="submit" name="s" value="<?=GetMessage("COLLECTPRO_BTN")?>" /><?
 		?></form><?
 	?></div><?
 }

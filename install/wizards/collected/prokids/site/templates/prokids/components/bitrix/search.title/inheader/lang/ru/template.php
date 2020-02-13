@@ -1,3 +1,3 @@
 <?
-$MESS["RSGOPRO_BTN"] = "Поиск";
-$MESS["RSGOPRO_PLACEHOLDER"] = "Введите название товара или артикул";
+$MESS["COLLECTPRO_BTN"] = "Поиск";
+$MESS["COLLECTPRO_PLACEHOLDER"] = "Введите название товара или артикул";

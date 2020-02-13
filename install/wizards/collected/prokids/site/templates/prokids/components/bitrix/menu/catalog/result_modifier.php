@@ -1,7 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-if( $arParams['RSGOPRO_MAX_ITEM']=='' )
-	$arParams['RSGOPRO_MAX_ITEM'] = 9;
+if( $arParams['COLLECTPRO_MAX_ITEM']=='' )
+	$arParams['COLLECTPRO_MAX_ITEM'] = 9;
 
 if( is_array($arResult) && count($arResult)>0 ){
 	$last_key_lvl1 = 0;
@@ -14,7 +14,7 @@ if( is_array($arResult) && count($arResult)>0 ){
 	$arResult[$last_key_lvl1]['IS_LAST_LVL1'] = 'Y';
 
 	////////////////////////////////// element in menu //////////////////////////////////
-	if(CModule::IncludeModule('iblock') && IntVal($arParams['IBLOCK_ID'])>0 && $arParams['RSGOPRO_PROPCODE_ELEMENT_IN_MENU']!=''){
+	if(CModule::IncludeModule('iblock') && IntVal($arParams['IBLOCK_ID'])>0 && $arParams['COLLECTPRO_PROPCODE_ELEMENT_IN_MENU']!=''){
 		foreach($arResult as $key1 => $arItem1){
 			if($arItem1['DEPTH_LEVEL']==1 && $arItem1['LINK']!=''){	
 				$arResult[$key1]['PARAMS']['ELEMENT'] = 'N';
@@ -23,10 +23,10 @@ if( is_array($arResult) && count($arResult)>0 ){
 					'IBLOCK_ID'=>IntVal($arParams['IBLOCK_ID'][0]),
 					'ACTIVE' => 'Y', 
 					'INCLUDE_SUBSECTIONS' => 'Y',
-					'PROPERTY_'.$arParams['RSGOPRO_PROPCODE_ELEMENT_IN_MENU'] => $arItem1['LINK'],
+					'PROPERTY_'.$arParams['COLLECTPRO_PROPCODE_ELEMENT_IN_MENU'] => $arItem1['LINK'],
 				);
 				$arNavStartParams = array('nTopCount'=>'1');
-				$arSelect = array('ID','IBLOCK_ID','ACTIVE','SECTION_ID','PROPERTY_'.$arParams['RSGOPRO_PROPCODE_ELEMENT_IN_MENU']);
+				$arSelect = array('ID','IBLOCK_ID','ACTIVE','SECTION_ID','PROPERTY_'.$arParams['COLLECTPRO_PROPCODE_ELEMENT_IN_MENU']);
 				$res = CIBlockElement::GetList($arOrder, $arFilter, false, $arNavStartParams, $arSelect);
 				if($arObj = $res->GetNextElement()){
 					$arFields = $arObj->GetFields();

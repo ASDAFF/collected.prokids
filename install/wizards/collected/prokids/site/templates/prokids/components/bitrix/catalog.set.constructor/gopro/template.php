@@ -176,9 +176,9 @@ if(!function_exists('SetConstruktorShowItem'))
 ?></div><?
 ?><script>
 	BX.message({
-		RSGoPro_SET_PROD_ID: '<?=GetMessageJS('RSGOPRO.SET_PROD_ID')?>',
-		RSGoPro_SET_PROD_NAME: '<?=GetMessageJS('RSGOPRO.SET_PROD_NAME')?>',
-		RSGoPro_SET_PROD_LINK: '<?=GetMessageJS('RSGOPRO.SET_PROD_LINK')?>',
-		RSGoPro_SET_NABOR: '<?=GetMessageJS('RSGOPRO.SET_NABOR')?>',
+		CollectJS_SET_PROD_ID: '<?=GetMessageJS('COLLECTPRO.SET_PROD_ID')?>',
+		CollectJS_SET_PROD_NAME: '<?=GetMessageJS('COLLECTPRO.SET_PROD_NAME')?>',
+		CollectJS_SET_PROD_LINK: '<?=GetMessageJS('COLLECTPRO.SET_PROD_LINK')?>',
+		CollectJS_SET_NABOR: '<?=GetMessageJS('COLLECTPRO.SET_NABOR')?>',
 	});
 </script>

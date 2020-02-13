@@ -89,7 +89,7 @@ if (!function_exists("cmpBySort")) {
 				if(val!='Y')
 					BX('confirmorder').value = 'N';
 				var orderForm = BX('ORDER_FORM');
-				RSGoPro_Area2Darken( $('#order_form_content'), 'animashka' );
+				CollectJS_Area2Darken( $('#order_form_content'), 'animashka' );
 				BX.ajax.submit(orderForm, ajaxResult);
 				return true;
 			}
@@ -98,7 +98,7 @@ if (!function_exists("cmpBySort")) {
 				try {
 					var json = JSON.parse(res);
 					//BX.closeWait();
-					RSGoPro_Area2Darken( $('#order_form_content') );
+					CollectJS_Area2Darken( $('#order_form_content') );
 					BX.closeWait();
 
 					if (json.error) {
@@ -109,7 +109,7 @@ if (!function_exists("cmpBySort")) {
 				} catch (e) {
 					BXFormPosting = false;
 					BX('order_form_content').innerHTML = res;
-					RSGoPro_InitMaskPhone();
+					CollectJS_InitMaskPhone();
 
 					<?if(CSaleLocation::isLocationProEnabled()):?>
 						BX.saleOrderAjax.initDeferredControl();
@@ -117,7 +117,7 @@ if (!function_exists("cmpBySort")) {
 				}
 
 				BX.closeWait();
-				RSGoPro_Area2Darken( $('#order_form_content') );
+				CollectJS_Area2Darken( $('#order_form_content') );
 			}
 
 			function SetContact(profileId) {

@@ -1,3 +1,3 @@
 <?
-$MESS['RSGOPRO.RECALL'] = 'Call me back';
-$MESS['RSGOPRO.FEEDBACK'] = 'Feedback';
+$MESS['COLLECTPRO.RECALL'] = 'Call me back';
+$MESS['COLLECTPRO.FEEDBACK'] = 'Feedback';

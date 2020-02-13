@@ -31,7 +31,7 @@ $APPLICATION->SetTitle("Liked goods");
 
 <div class="pcontent">
 
-<?global $rsGoProFavoriteFilter;?>
+<?global $rsCollectProFavoriteFilter;?>
 <?$APPLICATION->IncludeComponent(
 	"collected:favorite.list",
 	"filter",
@@ -62,7 +62,7 @@ if($_REQUEST['ajaxpages']=='Y' && $_REQUEST['ajaxpagesid']=='ajaxpages_favorite'
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_FIELD2" => "timestamp_x",
 		"ELEMENT_SORT_ORDER2" => "asc",
-		"FILTER_NAME" => "rsGoProFavoriteFilter",
+		"FILTER_NAME" => "rsCollectProFavoriteFilter",
 		"INCLUDE_SUBSECTIONS" => "A",
 		"SHOW_ALL_WO_SECTION" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",

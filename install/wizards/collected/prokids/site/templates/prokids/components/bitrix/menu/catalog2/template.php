@@ -4,11 +4,11 @@ $this->setFrameMode(true);
 if(is_array($arResult) && count($arResult)>0){
 	?><div class="catalogmenu2_column"><?
 		?><ul class="catalogmenu2 clearfix"><?
-			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('RSGOPRO_CATALOG')?><i class="menu icon<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"></i></a><?
+			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('COLLECTPRO_CATALOG')?><i class="menu icon<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"></i></a><?
 			?><ul class="first clearfix lvl1<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"><?
 			$previousLevel = 0;
 			$index = 1;
-			$max = $arParams['RSGOPRO_MAX_ITEM'];
+			$max = $arParams['COLLECTPRO_MAX_ITEM'];
 			$last_lvl1 = false;
 			foreach($arResult as $arItem){
 				if($previousLevel>1 && $arItem['DEPTH_LEVEL']==1){
@@ -53,13 +53,13 @@ if(is_array($arResult) && count($arResult)>0){
 				echo '</div></ul></li>';
 			}
 			if($index>($max+1)){
-				?><li class="first morelink lastchild"><a href="<?=$arParams['CATALOG_PATH']?>" class="first morelink"><?=GetMessage('RSGOPRO_MORE')?><i class="icon pngicons"></i></a></li><?
+				?><li class="first morelink lastchild"><a href="<?=$arParams['CATALOG_PATH']?>" class="first morelink"><?=GetMessage('COLLECTPRO_MORE')?><i class="icon pngicons"></i></a></li><?
 			}
 			?></ul></li><?
 		?></ul><?
 		
 		?><ul class="catalogmenusmall clearfix"><?
-			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('RSGOPRO_CATALOG')?><i class="menu icon"></i></a><?
+			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('COLLECTPRO_CATALOG')?><i class="menu icon"></i></a><?
 			?><ul class="first clearfix lvl1 noned"><?
 				foreach($arResult as $arItem){
 					if($arItem['DEPTH_LEVEL'] == 1){

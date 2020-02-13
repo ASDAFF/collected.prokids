@@ -1,16 +1,16 @@
 $(document).ready(function(){
-	if(parseInt(RSGOPRO_change_speed)<1)
-		RSGOPRO_change_speed = 2000;
-	if(parseInt(RSGOPRO_change_delay)<0)
-		RSGOPRO_change_delay = 8000;
+	if(parseInt(CollectJS_change_speed)<1)
+		CollectJS_change_speed = 2000;
+	if(parseInt(CollectJS_change_delay)<0)
+		CollectJS_change_delay = 8000;
 	
 	if($('#jssor_slider1').find('.item').length>0)
 	{
 		var options = {
 			$AutoPlay: 1,										//[Optional] Whether to auto play, to enable slideshow, this option must be set to true
 			$DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-			$AutoPlayInterval: RSGOPRO_change_delay,			//[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing
-			$SlideDuration: RSGOPRO_change_speed,               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+			$AutoPlayInterval: CollectJS_change_delay,			//[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing
+			$SlideDuration: CollectJS_change_speed,               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
 
 			$DirectionNavigatorOptions: {                       //[Optional] Options to specify and enable direction navigator or not
 				$Class: $JssorDirectionNavigator$,              //[Requried] Class to create direction navigator instance
@@ -31,7 +31,7 @@ $(document).ready(function(){
 		};
 		var jssor_slider1 = new $JssorSlider$("jssor_slider1", options);
 		// responsive code begin
-		function RSGOPRO_ScaleSlider() 
+		function CollectJS_ScaleSlider()
 		{
 			var parentWidth = $('#jssor_slider1').parent().width();
 			if (parentWidth) {
@@ -41,11 +41,11 @@ $(document).ready(function(){
 					jssor_slider1.$SetScaleWidth(990);
 				}
 			} else {
-				window.setTimeout(RSGOPRO_ScaleSlider, 30);
+				window.setTimeout(CollectJS_ScaleSlider, 30);
 			}
 		}
-		RSGOPRO_ScaleSlider();
-		$(window).bind('resize', RSGOPRO_ScaleSlider);
+		CollectJS_ScaleSlider();
+		$(window).bind('resize', CollectJS_ScaleSlider);
 		// responsive code end
 	}
 	

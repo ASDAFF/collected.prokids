@@ -3,9 +3,9 @@
 if($arParams['BRAND_CODE']=='' || $arParams['SECTIONS_CODE']=='')
 	return;
 
-if(!function_exists('RSGoPro_PrepareArray'))
+if(!function_exists('CollectJS_PrepareArray'))
 {
-	function RSGoPro_PrepareArray($arData=array(),$arCharacters=array(),$BRAND_CODE='')
+	function CollectJS_PrepareArray($arData=array(),$arCharacters=array(),$BRAND_CODE='')
 	{
 		$newArr = array();
 		if( is_array($arData) && count($arData)>0 && is_array($arCharacters) && count($arCharacters)>0 && $BRAND_CODE!='' )
@@ -54,7 +54,7 @@ $arLetters = array_unique($rest); // array with first characters
 			}
 		}
 		$arResult['DIGITAL'] = array();
-		$arResult['DIGITAL'] = RSGoPro_PrepareArray($arResult['ITEMS'],$digital_array,$arParams['BRAND_CODE']);
+		$arResult['DIGITAL'] = CollectJS_PrepareArray($arResult['ITEMS'],$digital_array,$arParams['BRAND_CODE']);
 	}
 
 	// prepare eng array
@@ -68,7 +68,7 @@ $arLetters = array_unique($rest); // array with first characters
 			}
 		}
 		$arResult['ENG_LETTER'] = array();
-		$arResult['ENG_LETTER'] = RSGoPro_PrepareArray($arResult['ITEMS'],$eng_array,$arParams['BRAND_CODE']);
+		$arResult['ENG_LETTER'] = CollectJS_PrepareArray($arResult['ITEMS'],$eng_array,$arParams['BRAND_CODE']);
 	}
 	
 	// prepare rus array
@@ -82,5 +82,5 @@ $arLetters = array_unique($rest); // array with first characters
 			}
 		}
 		$arResult['RUS_LETTER'] = array();
-		$arResult['RUS_LETTER'] = RSGoPro_PrepareArray($arResult['ITEMS'],$rus_array,$arParams['BRAND_CODE']);
+		$arResult['RUS_LETTER'] = CollectJS_PrepareArray($arResult['ITEMS'],$rus_array,$arParams['BRAND_CODE']);
 	}

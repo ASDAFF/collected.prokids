@@ -2,10 +2,10 @@
  * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-var RSGoPro_MenuTO = 0;
-var RSGoPro_MenuElemHover = false;
+var CollectJS_MenuTO = 0;
+var CollectJS_MenuElemHover = false;
 
-function RSGoPro_ElementInMenuPos( $liObj )
+function CollectJS_ElementInMenuPos( $liObj )
 {
 	var l = 250;
 	var $searchObj;
@@ -69,23 +69,23 @@ $(document).ready(function(){
 		$liObj.parent().find('li.hover').removeClass('hover');
 		setTimeout(function(){
 			$liObj.addClass('hover');
-			RSGoPro_ElementInMenuPos( $liObj );
+			CollectJS_ElementInMenuPos( $liObj );
 		},2);
 	}).on('mouseleave',function(){
 		var $liObj = $(this);
 		setTimeout(function(){
-			if(!RSGoPro_MenuElemHover)
+			if(!CollectJS_MenuElemHover)
 			{
 				$liObj.removeClass('hover')
 			}
-			RSGoPro_ElementInMenuPos( $liObj );
+			CollectJS_ElementInMenuPos( $liObj );
 		},2);
 	});
 	
 	$('.catalogmenu .elementinmenu').on('mouseenter',function(){
-		RSGoPro_MenuElemHover = true;
+		CollectJS_MenuElemHover = true;
 	}).on('mouseleave',function(){
-		RSGoPro_MenuElemHover = false;
+		CollectJS_MenuElemHover = false;
 	});
 	
 	if(CollectDevLib_PHONETABLET)

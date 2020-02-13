@@ -491,6 +491,6 @@ $(document).ready(function(){
 		}
 	}
 
-	RSGoPro_InitMaskPhone();
+	CollectJS_InitMaskPhone();
 	
 });

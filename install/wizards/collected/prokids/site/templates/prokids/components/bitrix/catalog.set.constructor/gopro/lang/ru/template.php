@@ -19,7 +19,7 @@ $MESS['CATALOG_SET_BUY1CLICK'] = 'Купить в 1 клик';
 
 $MESS['CATALOG_SET_CANT_BUY'] = 'Данный набор недоступен для покупки';
 
-$MESS['RSGOPRO.SET_PROD_ID'] = 'ID товара';
-$MESS['RSGOPRO.SET_PROD_NAME'] = 'Наименование товара';
-$MESS['RSGOPRO.SET_PROD_LINK'] = 'Ссылка на товар';
-$MESS['RSGOPRO.SET_NABOR'] = 'Покупка набора';
+$MESS['COLLECTPRO.SET_PROD_ID'] = 'ID товара';
+$MESS['COLLECTPRO.SET_PROD_NAME'] = 'Наименование товара';
+$MESS['COLLECTPRO.SET_PROD_LINK'] = 'Ссылка на товар';
+$MESS['COLLECTPRO.SET_NABOR'] = 'Покупка набора';

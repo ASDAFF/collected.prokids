@@ -20,18 +20,18 @@ $arTemplateParameters = array(
 		'TYPE' => 'CHECKBOX',
 		'VALUE' => 'Y',
 	),
-	'RSGOPRO_CHANGE_SPEED' => array(
-		'NAME' => GetMessage('RSGOPRO_CHANGE_SPEED'),
+	'COLLECTPRO_CHANGE_SPEED' => array(
+		'NAME' => GetMessage('COLLECTPRO_CHANGE_SPEED'),
 		'TYPE' => 'STRING',
 		'DEFAULT' => '2000',
 	),
-	'RSGOPRO_CHANGE_DELAY' => array(
-		'NAME' => GetMessage('RSGOPRO_CHANGE_DELAY'),
+	'COLLECTPRO_CHANGE_DELAY' => array(
+		'NAME' => GetMessage('COLLECTPRO_CHANGE_DELAY'),
 		'TYPE' => 'STRING',
 		'DEFAULT' => '8000',
 	),
-	'RSGOPRO_INCLUDE_OWL_SCRIPTS' => array(
-		'NAME' => GetMessage('RSGOPRO_INCLUDE_OWL_SCRIPTS'),
+	'COLLECTPRO_INCLUDE_OWL_SCRIPTS' => array(
+		'NAME' => GetMessage('COLLECTPRO_INCLUDE_OWL_SCRIPTS'),
 		'TYPE' => 'CHECKBOX',
 		'DEFAULT' => 'N',
 		'VALUE' => 'Y',

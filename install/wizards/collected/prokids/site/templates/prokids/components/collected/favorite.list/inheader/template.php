@@ -4,12 +4,12 @@
 	?><a id="inheadfavorite" href="<?=SITE_DIR?>personal/favorite/"><?
 		$frame = $this->createFrame('inheadfavorite',false)->begin();
 			?><i class="icon pngicons"></i><?
-			?><div class="title opensansbold"><?=GetMessage('RSGOPRO_TITLE')?></div><?
-			?><div class="descr"><?=GetMessage('RSGOPRO_PRODUCTS')?>&nbsp;(<span id="favorinfo"><?=$arResult['COUNT']?></span>)</div><?
+			?><div class="title opensansbold"><?=GetMessage('COLLECTPRO_TITLE')?></div><?
+			?><div class="descr"><?=GetMessage('COLLECTPRO_PRODUCTS')?>&nbsp;(<span id="favorinfo"><?=$arResult['COUNT']?></span>)</div><?
 		$frame->beginStub();
 			?><i class="icon pngicons"></i><?
-			?><div class="title opensansbold"><?=GetMessage('RSGOPRO_TITLE')?></div><?
-			?><div class="descr"><?=GetMessage('RSGOPRO_PRODUCTS')?>&nbsp;(<span id="favorinfo">0</span>)</div><?
+			?><div class="title opensansbold"><?=GetMessage('COLLECTPRO_TITLE')?></div><?
+			?><div class="descr"><?=GetMessage('COLLECTPRO_PRODUCTS')?>&nbsp;(<span id="favorinfo">0</span>)</div><?
 		$frame->end();
 	?></a><?
 ?></div>

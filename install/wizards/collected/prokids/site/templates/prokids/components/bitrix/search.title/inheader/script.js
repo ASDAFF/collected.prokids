@@ -1,4 +1,4 @@
-function RSGoPro_SearchTitle()
+function CollectJS_SearchTitle()
 {
 	if( $('.title-search-result').length>0 && $('.title-search-result').is(':visible') )
 	{
@@ -22,6 +22,6 @@ function RSGoPro_SearchTitle()
 
 $(document).ready(function(){
 	
-	setInterval(RSGoPro_SearchTitle, 500);
+	setInterval(CollectJS_SearchTitle, 500);
 	
 });

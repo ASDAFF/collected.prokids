@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-function RSGoPro_GetResult($amount,$arParams) {
+function CollectJS_GetResult($amount,$arParams) {
 	$return = 0;
 	if($arParams['GOPRO_USE_MIN_AMOUNT']=='Y') {
 		if( $amount<1 ) {
@@ -18,12 +18,12 @@ function RSGoPro_GetResult($amount,$arParams) {
 
 if( is_array($arResult['STORES']) && count($arResult['STORES'])>0 ) {
 	foreach($arResult['STORES'] as $key => $arStore) {
-		$arResult['STORES'][$key]['RESULT'] = RSGoPro_GetResult($arStore['NUM_AMOUNT'],$arParams);
+		$arResult['STORES'][$key]['RESULT'] = CollectJS_GetResult($arStore['NUM_AMOUNT'],$arParams);
 	}
 }
 
 if( is_array($arResult['SKU']) && count($arResult['SKU'])>0 ) {
 	foreach($arResult['SKU'] as $key => $arStore) {
-		$arResult['SKU'][$key]['RESULT'] = RSGoPro_GetResult($arStore['NUM_AMOUNT'],$arParams);
+		$arResult['SKU'][$key]['RESULT'] = CollectJS_GetResult($arStore['NUM_AMOUNT'],$arParams);
 	}
 }

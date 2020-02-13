@@ -1,5 +1,5 @@
 <?
-$MESS["RSGOPRO_AUTH"] = "Вход";
-$MESS["RSGOPRO_REGISTRATION"] = "Регистрация";
-$MESS["RSGOPRO_PERSONAL_PAGE"] = "Личный кабинет";
-$MESS["RSGOPRO_EXIT"] = "Выйти";
+$MESS["COLLECTPRO_AUTH"] = "Вход";
+$MESS["COLLECTPRO_REGISTRATION"] = "Регистрация";
+$MESS["COLLECTPRO_PERSONAL_PAGE"] = "Личный кабинет";
+$MESS["COLLECTPRO_EXIT"] = "Выйти";

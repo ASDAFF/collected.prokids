@@ -3,9 +3,9 @@ $MESS['DETAIL_TABS_VIEW'] = 'Tabs view';
 	$MESS['DETAIL_ARR_TABS_VIEW_TAB'] = 'tab';
 	$MESS['DETAIL_ARR_TABS_VIEW_ANCHOR'] = 'anchor';
 
-$MESS['RSGOPRO_VIEW_MODE'] = 'Catalog view';
-	$MESS['RSGOPRO_VIEW_SECTIONS'] = 'Show sections';
-	$MESS['RSGOPRO_VIEW_ELEMENTS'] = 'Show products';
+$MESS['COLLECTPRO_VIEW_MODE'] = 'Catalog view';
+	$MESS['COLLECTPRO_VIEW_SECTIONS'] = 'Show sections';
+	$MESS['COLLECTPRO_VIEW_ELEMENTS'] = 'Show products';
 // section, element
 $MESS['PROP_MORE_PHOTO'] = 'Property with ext. imaging products';
 $MESS['PROP_ARTICLE'] = 'Property with reference to the goods';

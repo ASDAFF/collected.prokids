@@ -7,5 +7,5 @@ if(is_array($arResult["ITEMS"]) && count($arResult["ITEMS"])>0)
 	{
 		$arrIDs[$arItem["ELEMENT_ID"]] = "Y";
 	}
-	?><script>RSGoPro_FAVORITE = <?=json_encode($arrIDs)?>;</script><?
+	?><script>CollectJS_FAVORITE = <?=json_encode($arrIDs)?>;</script><?
 }

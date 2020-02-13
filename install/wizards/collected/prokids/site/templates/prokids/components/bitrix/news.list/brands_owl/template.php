@@ -34,7 +34,7 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0)
 		?></div><?
 	?></div><?
 	?><script>
-		var RSGOPRO_change_speed_brands = <?if(IntVal($arParams["RSGOPRO_CHANGE_SPEED"])<1):?>2000<?else:?><?=$arParams["RSGOPRO_CHANGE_SPEED"]?><?endif;?>;
-		var RSGOPRO_change_delay_brands = <?if(IntVal($arParams["RSGOPRO_CHANGE_DELAY"])<1):?>8000<?else:?><?=$arParams["RSGOPRO_CHANGE_DELAY"]?><?endif;?>;
+		var CollectJS_change_speed_brands = <?if(IntVal($arParams["COLLECTPRO_CHANGE_SPEED"])<1):?>2000<?else:?><?=$arParams["COLLECTPRO_CHANGE_SPEED"]?><?endif;?>;
+		var CollectJS_change_delay_brands = <?if(IntVal($arParams["COLLECTPRO_CHANGE_DELAY"])<1):?>8000<?else:?><?=$arParams["COLLECTPRO_CHANGE_DELAY"]?><?endif;?>;
 	</script><?
 }

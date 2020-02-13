@@ -49,11 +49,11 @@ $MESS['CHEAPER'] = 'Хотите дешевле?';
 
 $MESS['GO2DETAILFROMPREVIEW'] = 'Подробнее';
 
-$MESS['RSGOPRO.DETAIL_PROD_ID'] = 'ID товара';
-$MESS['RSGOPRO.DETAIL_PROD_NAME'] = 'Наименование товара';
-$MESS['RSGOPRO.DETAIL_PROD_LINK'] = 'Ссылка на товар';
+$MESS['COLLECTPRO.DETAIL_PROD_ID'] = 'ID товара';
+$MESS['COLLECTPRO.DETAIL_PROD_NAME'] = 'Наименование товара';
+$MESS['COLLECTPRO.DETAIL_PROD_LINK'] = 'Ссылка на товар';
 
-$MESS['RSGOPRO.DETAIL_CHEAPER_TITLE'] = 'Форма Хотите дешевле';
+$MESS['COLLECTPRO.DETAIL_CHEAPER_TITLE'] = 'Форма Хотите дешевле';
 
 // component_epilog
 $MESS['TABS_DETAIL_TEXT'] = 'Описание';

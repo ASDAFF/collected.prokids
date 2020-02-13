@@ -7,7 +7,7 @@ IncludeTemplateLangFile(__FILE__);
 
 // check prokids module install
 if(!IsModuleInstalled('collected.prokids')){
-	echo '<span style="color:red;">'.GetMessage('RSGOPRO.ERROR_NOT_INSTALLED_GOPRO').'</span>';
+	echo '<span style="color:red;">'.GetMessage('COLLECTPRO.ERROR_NOT_INSTALLED_GOPRO').'</span>';
 	die();
 }
 // /check prokids module install
@@ -17,7 +17,7 @@ if(CModule::IncludeModule('collected.devlibrary')){
 	CollectDevLib::Init(array('jsfunc'));
 }
 else{
-	echo '<span style="color:red;">'.GetMessage('RSGOPRO.ERROR_NOT_INSTALLED_DEVLIBRARY').'</span>';
+	echo '<span style="color:red;">'.GetMessage('COLLECTPRO.ERROR_NOT_INSTALLED_DEVLIBRARY').'</span>';
 	die();
 }
 
@@ -101,20 +101,20 @@ $prop_option = COption::GetOptionString('collected.proopt', 'prop_option', 'line
 		SITE_DIR = '<?=str_replace('//','/',SITE_DIR);?>',
 		SITE_TEMPLATE_PATH = '<?=str_replace('//','/',SITE_TEMPLATE_PATH);?>',
 		SITE_CATALOG_PATH = 'catalog',
-		RSGoPro_Adaptive = <?=( $adaptive=='Y' ? 'true' : 'false' )?>,
-		RSGoPro_FancyCloseDelay = 1000,
-		RSGoPro_FancyReloadPageAfterClose = false,
-		RSGoPro_OFFERS = {},
-		RSGoPro_FAVORITE = {},
-		RSGoPro_COMPARE = {},
-		RSGoPro_INBASKET = {},
-		RSGoPro_STOCK = {},
-		RSGoPro_PHONETABLET = "N";
+		CollectJS_Adaptive = <?=( $adaptive=='Y' ? 'true' : 'false' )?>,
+		CollectJS_FancyCloseDelay = 1000,
+		CollectJS_FancyReloadPageAfterClose = false,
+		CollectJS_OFFERS = {},
+		CollectJS_FAVORITE = {},
+		CollectJS_COMPARE = {},
+		CollectJS_INBASKET = {},
+		CollectJS_STOCK = {},
+		CollectJS_PHONETABLET = "N";
 	// messages
 	BX.message({
-		"RSGOPRO_JS_TO_MACH_CLICK_LIKES":"<?=CUtil::JSEscape(GetMessage('RSGOPRO.JS_TO_MACH_CLICK_LIKES'))?>",
-		"RSGOPRO_JS_COMPARE":"<?=CUtil::JSEscape(GetMessage('RSGOPRO.RSGOPRO_JS_COMPARE'))?>",
-		"RSGOPRO_JS_COMPARE_IN":"<?=CUtil::JSEscape(GetMessage('RSGOPRO.RSGOPRO_JS_COMPARE_IN'))?>"
+		"COLLECTPRO_JS_TO_MACH_CLICK_LIKES":"<?=CUtil::JSEscape(GetMessage('COLLECTPRO.JS_TO_MACH_CLICK_LIKES'))?>",
+		"COLLECTPRO_JS_COMPARE":"<?=CUtil::JSEscape(GetMessage('COLLECTPRO.COLLECTPRO_JS_COMPARE'))?>",
+		"COLLECTPRO_JS_COMPARE_IN":"<?=CUtil::JSEscape(GetMessage('COLLECTPRO.COLLECTPRO_JS_COMPARE_IN'))?>"
 	});
 </script><?
 ?></head><?
@@ -185,7 +185,7 @@ $prop_option = COption::GetOptionString('collected.proopt', 'prop_option', 'line
 					?></div><?
 					?><div class="callback column1 nowrap"><?
 						?><div class="column1inner"><?
-							?><a class="fancyajax fancybox.ajax big" href="#SITE_DIR#nasvyazi/" title="<?=GetMessage("RSGOPRO.NA_SVYAZI_TITLE")?>"><?=GetMessage("RSGOPRO.NA_SVYAZI")?><i class="icon pngicons"></i></a><?
+							?><a class="fancyajax fancybox.ajax big" href="#SITE_DIR#nasvyazi/" title="<?=GetMessage("COLLECTPRO.NA_SVYAZI_TITLE")?>"><?=GetMessage("COLLECTPRO.NA_SVYAZI")?><i class="icon pngicons"></i></a><?
 						?></div><?
 					?></div><?
 					?><div class="favorite column1 nowrap"><?

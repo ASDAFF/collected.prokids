@@ -2,26 +2,26 @@
  * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-var RSGoPro_MenuTO = 0;
-var RSGoPro_MenuElemHover = false;
+var CollectJS_MenuTO = 0;
+var CollectJS_MenuElemHover = false;
 
-function RSGoPro_menuGetPos($obj){
+function CollectJS_menuGetPos($obj){
 	return ( parseInt($obj.offset().top)-parseInt($obj.parent().offset().top) );
 }
 
-function RSGOPRO_SetHeightMenuMRows(){
+function CollectJS_SetHeightMenuMRows(){
 	setTimeout(function(){
 		// reset
 		var $currentLVL2 = $('.catalogmenu2').find('.first.hover').find('.lvl2');
 		// in line
 		if(!$currentLVL2.hasClass('positioned')){
 			$currentLVL2.find('.mrow').css('minHeight','none');
-			var position = RSGoPro_menuGetPos( $currentLVL2.find('.mrow:first') ),
+			var position = CollectJS_menuGetPos( $currentLVL2.find('.mrow:first') ),
 				position_tmp = 0,
 				last_index = 0,
 				max_height = 0;
 			$currentLVL2.find('.mrow').each(function(i){
-				position_tmp = RSGoPro_menuGetPos( $(this) );
+				position_tmp = CollectJS_menuGetPos( $(this) );
 				if( position_tmp!=position ){
 					if(last_index>0){
 						$currentLVL2.find('.mrow:lt('+(i)+'):gt('+last_index+')').css('minHeight',max_height);
@@ -29,7 +29,7 @@ function RSGOPRO_SetHeightMenuMRows(){
 						$currentLVL2.find('.mrow:lt('+(i)+')').css('minHeight',max_height);
 					}
 					last_index = (i-1);
-					position = RSGoPro_menuGetPos( $(this) );
+					position = CollectJS_menuGetPos( $(this) );
 					max_height = $(this).outerHeight(true)+2;
 				} else {
 					if( $(this).outerHeight(true)>max_height )
@@ -84,21 +84,21 @@ $(document).ready(function(){
 		$liObj.parent().find('li.hover').removeClass('hover');
 		setTimeout(function(){
 			$liObj.addClass('hover');
-			RSGOPRO_SetHeightMenuMRows();
+			CollectJS_SetHeightMenuMRows();
 		},2);
 	}).on('mouseleave',function(){
 		var $liObj = $(this);
 		setTimeout(function(){
-			if(!RSGoPro_MenuElemHover){
+			if(!CollectJS_MenuElemHover){
 				$liObj.removeClass('hover')
 			}
 		},2);
 	});
 	
 	$('.catalogmenu2 .elementinmenu').on('mouseenter',function(){
-		RSGoPro_MenuElemHover = true;
+		CollectJS_MenuElemHover = true;
 	}).on('mouseleave',function(){
-		RSGoPro_MenuElemHover = false;
+		CollectJS_MenuElemHover = false;
 	});
 	
 	if(CollectDevLib_PHONETABLET)

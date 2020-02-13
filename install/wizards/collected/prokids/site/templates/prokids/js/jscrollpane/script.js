@@ -2,12 +2,12 @@
  * Copyright (c) 16/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-var RSGoPro_JSPParentSelector = '.scrollp';
-var RSGoPro_JSPScrollSelector = '.scroll';
-var RSGoPro_JSPAllChildrensSelector = '.scrollinner';
-var RSGoPro_JSPOneChildrenSelector = '.scrollitem';
-var RSGoPro_JSPButtonsSelector = '.scrollbtn';
-var RSGoPro_SimpleScrollScrollSpeed = 500;
+var CollectJS_JSPParentSelector = '.scrollp';
+var CollectJS_JSPScrollSelector = '.scroll';
+var CollectJS_JSPAllChildrensSelector = '.scrollinner';
+var CollectJS_JSPOneChildrenSelector = '.scrollitem';
+var CollectJS_JSPButtonsSelector = '.scrollbtn';
+var CollectJS_SimpleScrollScrollSpeed = 500;
 
 (function($){
     $.fn.hasScrollBarY = function(){
@@ -22,49 +22,49 @@ var RSGoPro_SimpleScrollScrollSpeed = 500;
     }
 })(jQuery);
 
-function RSGoPro_JSPInit(selector)
+function CollectJS_JSPInit(selector)
 {
 	var $scroll = $(selector);
 	if( $scroll.length>0 )
 	{
-		$scroll.parents(RSGoPro_JSPParentSelector).addClass('jsp');
+		$scroll.parents(CollectJS_JSPParentSelector).addClass('jsp');
 		$scroll.jScrollPane({animateScroll:true,mouseWheelSpeed:30,verticalGutter:0});
 		$scroll.each(function(i){
 			if( $(this).hasClass('jspScrollable') )
 			{
-				$(this).parents(RSGoPro_JSPParentSelector).addClass('jspHasScroll');
+				$(this).parents(CollectJS_JSPParentSelector).addClass('jspHasScroll');
 			}
 		});
 	}
 }
-function RSGoPro_JSPReinit(selector,needDestroy)
+function CollectJS_JSPReinit(selector,needDestroy)
 {
 	var $scroll = $(selector);
 	if( $scroll.length>0 )
 	{
-		if( $scroll.parents(RSGoPro_JSPParentSelector).hasClass('horizontal') )
+		if( $scroll.parents(CollectJS_JSPParentSelector).hasClass('horizontal') )
 		{
 			var count=0,elemWidth=0;
 			$scroll.each(function(i){
-				count = $(this).find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).length;
-				elemWidth = $(this).find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).filter(':first').outerWidth(true);
-				$(this).find(RSGoPro_JSPAllChildrensSelector).css({width:(count*elemWidth)+'px'});
+				count = $(this).find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).length;
+				elemWidth = $(this).find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).filter(':first').outerWidth(true);
+				$(this).find(CollectJS_JSPAllChildrensSelector).css({width:(count*elemWidth)+'px'});
 			});
 		}
 		if( needDestroy )
 		{
 			$scroll.data('jsp').destroy();
-			RSGoPro_JSPInit(selector);
+			CollectJS_JSPInit(selector);
 		} else {
 			var pane2api;
 			setTimeout(function(){ // fix for slow shit
-				$scroll.parents(RSGoPro_JSPParentSelector).removeClass('jspHasScroll');
+				$scroll.parents(CollectJS_JSPParentSelector).removeClass('jspHasScroll');
 				$scroll.each(function(i){
 					pane2api = $(this).data('jsp');
 					pane2api.reinitialise();
 					if( $(this).hasClass('jspScrollable') )
 					{
-						$(this).parents(RSGoPro_JSPParentSelector).addClass('jspHasScroll');
+						$(this).parents(CollectJS_JSPParentSelector).addClass('jspHasScroll');
 					}
 				});
 			},50);
@@ -72,112 +72,112 @@ function RSGoPro_JSPReinit(selector,needDestroy)
 	}
 }
 
-function RSGoPro_SimpleScrollInit(selector)
+function CollectJS_SimpleScrollInit(selector)
 {
 	var $scroll = $(selector);
 	if( $scroll.length>0 )
 	{
 		var count=0,elemWidth=0;
-		if( $scroll.parents(RSGoPro_JSPParentSelector).hasClass('horizontal') )
+		if( $scroll.parents(CollectJS_JSPParentSelector).hasClass('horizontal') )
 		{
 			$scroll.each(function(i){
-				count = $(this).find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).length;
-				elemSize = $(this).find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).filter(':first').outerWidth(true);
-				$(this).css({overflowX:'auto',overflowY:'hidden'}).find(RSGoPro_JSPAllChildrensSelector).css({width:(count*elemSize)+'px'});
+				count = $(this).find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).length;
+				elemSize = $(this).find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).filter(':first').outerWidth(true);
+				$(this).css({overflowX:'auto',overflowY:'hidden'}).find(CollectJS_JSPAllChildrensSelector).css({width:(count*elemSize)+'px'});
 				if( $(this).hasScrollBarX() )
 				{
-					$(this).parents(RSGoPro_JSPParentSelector).addClass('jspHasScroll');
+					$(this).parents(CollectJS_JSPParentSelector).addClass('jspHasScroll');
 				}
 			});
 		} else {
 			$scroll.each(function(i){
-				count = $(this).find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).length;
-				elemSize = $(this).find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).filter(':first').outerHeight(true);
-				//$(this).css({overflowX:'hidden',overflowY:'auto'}).find(RSGoPro_JSPAllChildrensSelector).css({width:(count*elemSize)+'px'});
+				count = $(this).find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).length;
+				elemSize = $(this).find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).filter(':first').outerHeight(true);
+				//$(this).css({overflowX:'hidden',overflowY:'auto'}).find(CollectJS_JSPAllChildrensSelector).css({width:(count*elemSize)+'px'});
 				if( $(this).hasScrollBarY() )
 				{
-					$(this).parents(RSGoPro_JSPParentSelector).addClass('jspHasScroll');
+					$(this).parents(CollectJS_JSPParentSelector).addClass('jspHasScroll');
 				}
 			});
 		}
-		$scroll.parents(RSGoPro_JSPParentSelector).addClass('simple');
+		$scroll.parents(CollectJS_JSPParentSelector).addClass('simple');
 	}
 }
-function RSGoPro_SimpleScrollReinit(selector)
+function CollectJS_SimpleScrollReinit(selector)
 {
 	$(selector).each(function(i){
 		if( $(this).hasScrollBarY() )
 		{
-			$(this).parents(RSGoPro_JSPParentSelector).addClass('jspHasScroll');
+			$(this).parents(CollectJS_JSPParentSelector).addClass('jspHasScroll');
 		}
 	});
 }
 
-function RSGoPro_ScrollInit(selector)
+function CollectJS_ScrollInit(selector)
 {
 	if(CollectDevLib_PHONETABLET) // this is tablet or phone
 	{
 		// init
-		RSGoPro_SimpleScrollInit(selector);
+		CollectJS_SimpleScrollInit(selector);
 	} else { // this is PC
 		// init
-		RSGoPro_JSPInit(selector);
+		CollectJS_JSPInit(selector);
 	}
 }
-function RSGoPro_ScrollReinit(selector,needDestroy)
+function CollectJS_ScrollReinit(selector,needDestroy)
 {
 	if(CollectDevLib_PHONETABLET) // this is tablet or phone
 	{
 		// reinit
-		RSGoPro_SimpleScrollReinit(selector);
+		CollectJS_SimpleScrollReinit(selector);
 	} else {
 		// reinit
-		RSGoPro_JSPReinit(selector,needDestroy);
+		CollectJS_JSPReinit(selector,needDestroy);
 	}
 }
-function RSGoPro_ScrollPressButton($btn)
+function CollectJS_ScrollPressButton($btn)
 {
-	var $scroll = $btn.parents(RSGoPro_JSPParentSelector).find(RSGoPro_JSPScrollSelector);
-	if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('horizontal') )
+	var $scroll = $btn.parents(CollectJS_JSPParentSelector).find(CollectJS_JSPScrollSelector);
+	if( $btn.parents(CollectJS_JSPParentSelector).hasClass('horizontal') )
 	{
-		var elemSize = $scroll.find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).filter(':first').outerWidth(true);
+		var elemSize = $scroll.find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).filter(':first').outerWidth(true);
 	} else {
-		var elemSize = $scroll.find(RSGoPro_JSPAllChildrensSelector).find(RSGoPro_JSPOneChildrenSelector).filter(':first').outerHeight(true);
+		var elemSize = $scroll.find(CollectJS_JSPAllChildrensSelector).find(CollectJS_JSPOneChildrenSelector).filter(':first').outerHeight(true);
 	}
-	if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('prev') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('jsp') )
+	if( $btn.parents(CollectJS_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('prev') && $btn.parents(CollectJS_JSPParentSelector).hasClass('jsp') )
 	{
 		$scroll.data('jsp').scrollByX( -(elemSize) );
-	} else if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('prev') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('simple') )
+	} else if( $btn.parents(CollectJS_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('prev') && $btn.parents(CollectJS_JSPParentSelector).hasClass('simple') )
 	{
-		$scroll.stop().scrollTo( {top:'+=0px',left:'-='+(elemSize)}, RSGoPro_SimpleScrollScrollSpeed );
-	} else if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('next') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('jsp') )
+		$scroll.stop().scrollTo( {top:'+=0px',left:'-='+(elemSize)}, CollectJS_SimpleScrollScrollSpeed );
+	} else if( $btn.parents(CollectJS_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('next') && $btn.parents(CollectJS_JSPParentSelector).hasClass('jsp') )
 	{
 		$scroll.data('jsp').scrollByX( (elemSize) );
-	} else if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('next') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('simple') )
+	} else if( $btn.parents(CollectJS_JSPParentSelector).hasClass('horizontal') && $btn.hasClass('next') && $btn.parents(CollectJS_JSPParentSelector).hasClass('simple') )
 	{
-		$scroll.stop().scrollTo( {top:'+=0px',left:'+='+(elemSize)}, RSGoPro_SimpleScrollScrollSpeed );
-	} else if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('vertical') && $btn.hasClass('prev') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('jsp') )
+		$scroll.stop().scrollTo( {top:'+=0px',left:'+='+(elemSize)}, CollectJS_SimpleScrollScrollSpeed );
+	} else if( $btn.parents(CollectJS_JSPParentSelector).hasClass('vertical') && $btn.hasClass('prev') && $btn.parents(CollectJS_JSPParentSelector).hasClass('jsp') )
 	{
 		$scroll.data('jsp').scrollByY( -(elemSize) );
-	} else if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('vertical') && $btn.hasClass('prev') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('simple') )
+	} else if( $btn.parents(CollectJS_JSPParentSelector).hasClass('vertical') && $btn.hasClass('prev') && $btn.parents(CollectJS_JSPParentSelector).hasClass('simple') )
 	{
-		$scroll.stop().scrollTo( {top:'-='+(elemSize),left:'+=0px'}, RSGoPro_SimpleScrollScrollSpeed );
-	} else if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('vertical') && $btn.hasClass('next') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('jsp') )
+		$scroll.stop().scrollTo( {top:'-='+(elemSize),left:'+=0px'}, CollectJS_SimpleScrollScrollSpeed );
+	} else if( $btn.parents(CollectJS_JSPParentSelector).hasClass('vertical') && $btn.hasClass('next') && $btn.parents(CollectJS_JSPParentSelector).hasClass('jsp') )
 	{
 		$scroll.data('jsp').scrollByY( (elemSize) );
-	} else if( $btn.parents(RSGoPro_JSPParentSelector).hasClass('vertical') && $btn.hasClass('next') && $btn.parents(RSGoPro_JSPParentSelector).hasClass('simple') )
+	} else if( $btn.parents(CollectJS_JSPParentSelector).hasClass('vertical') && $btn.hasClass('next') && $btn.parents(CollectJS_JSPParentSelector).hasClass('simple') )
 	{
-		$scroll.stop().scrollTo( {top:'+='+(elemSize),left:'+=0px'}, RSGoPro_SimpleScrollScrollSpeed );
+		$scroll.stop().scrollTo( {top:'+='+(elemSize),left:'+=0px'}, CollectJS_SimpleScrollScrollSpeed );
 	}
 }
-function RSGoPro_ScrollGoToElement($element)
+function CollectJS_ScrollGoToElement($element)
 {
-	var $scroll = $element.parents(RSGoPro_JSPParentSelector).find(RSGoPro_JSPScrollSelector);
-	if( $element.parents(RSGoPro_JSPParentSelector).hasClass('jsp') )
+	var $scroll = $element.parents(CollectJS_JSPParentSelector).find(CollectJS_JSPScrollSelector);
+	if( $element.parents(CollectJS_JSPParentSelector).hasClass('jsp') )
 	{
 		$scroll.data('jsp').scrollToElement( $element, false );
-	} else if( $element.parents(RSGoPro_JSPParentSelector).hasClass('simple') ) {
-		$scroll.stop().scrollTo( $element, RSGoPro_SimpleScrollScrollSpeed );
+	} else if( $element.parents(CollectJS_JSPParentSelector).hasClass('simple') ) {
+		$scroll.stop().scrollTo( $element, CollectJS_SimpleScrollScrollSpeed );
 	}
 }
 
@@ -185,11 +185,11 @@ function RSGoPro_ScrollGoToElement($element)
 $(document).ready(function(){
 	
 	// press button
-	$(document).on('click',RSGoPro_JSPParentSelector+' '+RSGoPro_JSPButtonsSelector,function(){
+	$(document).on('click',CollectJS_JSPParentSelector+' '+CollectJS_JSPButtonsSelector,function(){
 		var $btn = $(this);
-		if( $btn.parents(RSGoPro_JSPParentSelector).length>0 )
+		if( $btn.parents(CollectJS_JSPParentSelector).length>0 )
 		{
-			RSGoPro_ScrollPressButton($btn);
+			CollectJS_ScrollPressButton($btn);
 		}
 		return false;
 	});

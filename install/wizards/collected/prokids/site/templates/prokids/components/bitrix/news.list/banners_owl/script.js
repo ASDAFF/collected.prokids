@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	if(parseInt(RSGOPRO_change_speed)<1) {
-		RSGOPRO_change_speed = 2000;
+	if(parseInt(CollectJS_change_speed)<1) {
+		CollectJS_change_speed = 2000;
 	}
-	if(parseInt(RSGOPRO_change_delay)<0) {
-		RSGOPRO_change_delay = 8000;
+	if(parseInt(CollectJS_change_delay)<0) {
+		CollectJS_change_delay = 8000;
 	}
 	
 	if($('#owl_slider1').find('.item').length>1) {
@@ -14,9 +14,9 @@ $(document).ready(function(){
 			nav					: true,
 			navText				: ['<span><i class="icon pngicons"></i></span>','<span><i class="icon pngicons"></i></span>'],
 			navClass			: ['owl-prev', 'owl-next'],
-			autoplaySpeed		: RSGOPRO_change_speed,
-			autoplayTimeout		: RSGOPRO_change_delay,
-			smartSpeed			: RSGOPRO_change_speed
+			autoplaySpeed		: CollectJS_change_speed,
+			autoplayTimeout		: CollectJS_change_delay,
+			smartSpeed			: CollectJS_change_speed
 		});
 	}
 	

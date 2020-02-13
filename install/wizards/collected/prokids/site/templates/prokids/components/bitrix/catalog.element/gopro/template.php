@@ -512,11 +512,11 @@ if($HAVE_OFFERS) { $PRODUCT = &$arResult['OFFERS'][0]; } else { $PRODUCT = &$arR
 ?></div><?
 ?><script>
 	BX.message({
-		RSGoPro_DETAIL_PROD_ID: '<?=GetMessageJS('RSGOPRO.DETAIL_PROD_ID')?>',
-		RSGoPro_DETAIL_PROD_NAME: '<?=GetMessageJS('RSGOPRO.DETAIL_PROD_NAME')?>',
-		RSGoPro_DETAIL_PROD_LINK: '<?=GetMessageJS('RSGOPRO.DETAIL_PROD_LINK')?>',
+		CollectJS_DETAIL_PROD_ID: '<?=GetMessageJS('COLLECTPRO.DETAIL_PROD_ID')?>',
+		CollectJS_DETAIL_PROD_NAME: '<?=GetMessageJS('COLLECTPRO.DETAIL_PROD_NAME')?>',
+		CollectJS_DETAIL_PROD_LINK: '<?=GetMessageJS('COLLECTPRO.DETAIL_PROD_LINK')?>',
 		
-		RSGoPro_DETAIL_CHEAPER_TITLE: '<?=GetMessageJS('RSGOPRO.DETAIL_CHEAPER_TITLE')?>',
+		CollectJS_DETAIL_CHEAPER_TITLE: '<?=GetMessageJS('COLLECTPRO.DETAIL_CHEAPER_TITLE')?>',
 	});
 	$(document).ready(function() {
 		if ($(document).width()<670) {

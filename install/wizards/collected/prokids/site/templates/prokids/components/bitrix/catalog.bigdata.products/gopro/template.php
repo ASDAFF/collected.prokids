@@ -68,8 +68,8 @@ if(isset($arResult['REQUEST_ITEMS']))
 						setTimeout(function(){
 							if( $('.js-bigdata').find('.js-element').length>0 ) {
 								$('.bigdata').show();
-								RSGoPro_ScrollInit('.prices_jscrollpane');
-								RSGoPro_TIMER();
+								CollectJS_ScrollInit('.prices_jscrollpane');
+								CollectJS_TIMER();
 							}
 						},75); // for slow shit
 					}

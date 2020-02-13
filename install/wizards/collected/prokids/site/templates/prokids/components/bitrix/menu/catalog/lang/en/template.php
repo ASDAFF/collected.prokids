@@ -1,3 +1,3 @@
 <?
-$MESS['RSGOPRO_CATALOG'] = "Catalogue";
-$MESS['RSGOPRO_MORE'] = "&#149;&#149;&#149;";
+$MESS['COLLECTPRO_CATALOG'] = "Catalogue";
+$MESS['COLLECTPRO_MORE'] = "&#149;&#149;&#149;";

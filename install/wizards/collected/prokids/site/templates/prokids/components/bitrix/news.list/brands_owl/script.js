@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	if(parseInt(RSGOPRO_change_speed_brands)<1) {
-		RSGOPRO_change_speed_brands = 2000;
+	if(parseInt(CollectJS_change_speed_brands)<1) {
+		CollectJS_change_speed_brands = 2000;
 	}
-	if(parseInt(RSGOPRO_change_delay_brands)<0) {
-		RSGOPRO_change_delay_brands = 8000;
+	if(parseInt(CollectJS_change_delay_brands)<0) {
+		CollectJS_change_delay_brands = 8000;
 	}
 	
 	if($('#owl_brandslist1').find('.item').length>1) {
@@ -32,9 +32,9 @@ $(document).ready(function(){
 					items 	: 6
 				}
 			},
-			autoplaySpeed		: RSGOPRO_change_speed_brands,
-			autoplayTimeout		: RSGOPRO_change_delay_brands,
-			smartSpeed			: RSGOPRO_change_speed_brands
+			autoplaySpeed		: CollectJS_change_speed_brands,
+			autoplayTimeout		: CollectJS_change_delay_brands,
+			smartSpeed			: CollectJS_change_speed_brands
 		});
 	}
 	

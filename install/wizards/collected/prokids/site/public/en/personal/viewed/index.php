@@ -27,7 +27,7 @@ $APPLICATION->SetTitle("Viewed goods");
 
 <div class="pcontent">
 
-<?global $rsGoProViewedFilter;?>
+<?global $rsCollectProViewedFilter;?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.viewed.products", 
 	"filter", 
@@ -110,7 +110,7 @@ if($_REQUEST['ajaxpages']=='Y' && $_REQUEST['ajaxpagesid']=='ajaxpages_viewed')
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_FIELD2" => "timestamp_x",
 		"ELEMENT_SORT_ORDER2" => "asc",
-		"FILTER_NAME" => "rsGoProViewedFilter",
+		"FILTER_NAME" => "rsCollectProViewedFilter",
 		"INCLUDE_SUBSECTIONS" => "A",
 		"SHOW_ALL_WO_SECTION" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",

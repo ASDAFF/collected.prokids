@@ -1,3 +1,3 @@
 <?
-$MESS["RSGOPRO_TITLE"] = "Избранное";
-$MESS["RSGOPRO_PRODUCTS"] = "Товаров";
+$MESS["COLLECTPRO_TITLE"] = "Избранное";
+$MESS["COLLECTPRO_PRODUCTS"] = "Товаров";

@@ -3,9 +3,9 @@ $MESS['DETAIL_TABS_VIEW'] = 'Вид отображения вкладок';
 	$MESS['DETAIL_ARR_TABS_VIEW_TAB'] = 'вкладки';
 	$MESS['DETAIL_ARR_TABS_VIEW_ANCHOR'] = 'якоря';
 
-$MESS['RSGOPRO_VIEW_MODE'] = 'Вид отображения каталога';
-	$MESS['RSGOPRO_VIEW_SECTIONS'] = 'Отображать разделы';
-	$MESS['RSGOPRO_VIEW_ELEMENTS'] = 'Отображать товары';
+$MESS['COLLECTPRO_VIEW_MODE'] = 'Вид отображения каталога';
+	$MESS['COLLECTPRO_VIEW_SECTIONS'] = 'Отображать разделы';
+	$MESS['COLLECTPRO_VIEW_ELEMENTS'] = 'Отображать товары';
 // section, element
 $MESS['PROP_MORE_PHOTO'] = 'Свойство с доп. изображениями товаров';
 $MESS['PROP_ARTICLE'] = 'Свойство с артикулом товара';

@@ -1,11 +1,11 @@
-var RSGoPro_Separator = ":SEPARATOR:";
+var CollectJS_Separator = ":SEPARATOR:";
 
-function RSGoPro_SummComment(forma)
+function CollectJS_SummComment(forma)
 {
 	var $reviewform = $(forma);
-	var newVal = $reviewform.find('input[name="REVIEW_TEXT_rate"]').val() + RSGoPro_Separator + 
-		$reviewform.find('textarea[name="REVIEW_TEXT_plus"]').val() + RSGoPro_Separator + 
-		$reviewform.find('textarea[name="REVIEW_TEXT_minus"]').val() + RSGoPro_Separator + 
+	var newVal = $reviewform.find('input[name="REVIEW_TEXT_rate"]').val() + CollectJS_Separator + 
+		$reviewform.find('textarea[name="REVIEW_TEXT_plus"]').val() + CollectJS_Separator + 
+		$reviewform.find('textarea[name="REVIEW_TEXT_minus"]').val() + CollectJS_Separator + 
 		$reviewform.find('textarea[name="REVIEW_TEXT_comment"]').val();
 	if($reviewform.find('textarea[name="REVIEW_TEXT_comment"]').val()=="")
 		newVal = '';

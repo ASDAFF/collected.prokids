@@ -1,7 +1,7 @@
-function RSGoProSorterGo(ajaxpagesid,$obj,url,isBigdata) {
+function CollectProSorterGo(ajaxpagesid,$obj,url,isBigdata) {
 	if($obj) {
 		var catalog_selector = '#'+ajaxpagesid;
-		RSGoPro_Area2Darken($(catalog_selector),'animashka');
+		CollectJS_Area2Darken($(catalog_selector),'animashka');
 		$obj.parent().find('a').removeClass('selected');
 		$obj.addClass('selected');
 		var val = $obj.html();
@@ -10,16 +10,16 @@ function RSGoProSorterGo(ajaxpagesid,$obj,url,isBigdata) {
 		}
 		if(isBigdata!='Y' && url && url!='') {
 			$.getJSON(url, {}, function(json){
-				RSGoPro_PutJSon( json,false,ajaxpagesid );
+				CollectJS_PutJSon( json,false,ajaxpagesid );
 				setTimeout(function(){
-					RSGoPro_ScrollInit('.prices_jscrollpane');
-					RSGoPro_TIMER();
-					RSGoPro_SetSet();
+					CollectJS_ScrollInit('.prices_jscrollpane');
+					CollectJS_TIMER();
+					CollectJS_SetSet();
 				},75); // for slow shit
 			}).fail(function(json){
 				console.warn( 'sorter - change template -> error responsed' );
 			}).always(function(){
-				RSGoPro_Area2Darken($(catalog_selector),'animashka');
+				CollectJS_Area2Darken($(catalog_selector),'animashka');
 			});
 		}
 	}
@@ -35,7 +35,7 @@ $(document).ready(function(){
 			if( ajaxpagesid && ajaxpagesid!='' ) {
 				if( $link.parents('.js-bigdata').length>0 ) { // big data
 					console.log( 'sorter - bigdata' );
-					RSGoProSorterGo(ajaxpagesid,$link,'','Y');
+					CollectProSorterGo(ajaxpagesid,$link,'','Y');
 					var $jsBigdata = $link.parents('.js-bigdata');
 					BX.ajax({
 						url: $jsBigdata.data('url'),
@@ -49,16 +49,16 @@ $(document).ready(function(){
 							// inject
 							BX($jsBigdata.data('injectId')).innerHTML = ob.HTML;
 							BX.ajax.processScripts(ob.SCRIPT);
-							RSGoPro_ScrollInit('.prices_jscrollpane');
-							RSGoPro_Area2Darken($('#'+ajaxpagesid),'animashka');
-							RSGoPro_TIMER();
-							RSGoPro_SetSet();
+							CollectJS_ScrollInit('.prices_jscrollpane');
+							CollectJS_Area2Darken($('#'+ajaxpagesid),'animashka');
+							CollectJS_TIMER();
+							CollectJS_SetSet();
 						}
 					});
 
 				} else { // normal components
 					var url = $link.attr('href') + '&AJAX_CALL=Y&sorterchange='+ajaxpagesid;
-					RSGoProSorterGo(ajaxpagesid,$link,url,'N');
+					CollectProSorterGo(ajaxpagesid,$link,url,'N');
 					if( $link.parents('.dropdown').length>0 ) {
 						$link.parents('.dropdown').removeClass('hover');
 					}

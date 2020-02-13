@@ -12,5 +12,5 @@ if( $arParams['IS_SORTERCHANGE']=='Y') {
 }
 
 if( $templateData['ADD_HIDER'] ) {
-	?><script>RSGoPro_Hider();</script><?
+	?><script>CollectJS_Hider();</script><?
 }

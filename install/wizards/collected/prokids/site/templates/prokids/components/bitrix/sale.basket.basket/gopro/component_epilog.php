@@ -1,8 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-if(!function_exists('RSGoPro_GetAccessoriesIDs'))
+if(!function_exists('CollectJS_GetAccessoriesIDs'))
 {
-	function RSGoPro_GetAccessoriesIDs($IBLOCK_ID,$arIDs=array(),$params=array())
+	function CollectJS_GetAccessoriesIDs($IBLOCK_ID,$arIDs=array(),$params=array())
 	{
 		$arrEccessoriesIDs = array();
 		if( IntVal($IBLOCK_ID)>0 && is_array($arIDs) && count($arIDs)>0 && CModule::IncludeModule('iblock') && CModule::IncludeModule('catalog') && $params['PROP_ACCESSORIES']!='' )
@@ -86,7 +86,7 @@ if( IntVal($arParams['ACCESSORIES_IBLOCK'])>0 && $arParams['PROP_ACCESSORIES']!=
 	$params = array(
 		'PROP_ACCESSORIES' => $arParams['PROP_ACCESSORIES'],
 	);
-	$arrAccFilter['ID'] = RSGoPro_GetAccessoriesIDs($IBLOCK_ID,$arProducts,$params);
+	$arrAccFilter['ID'] = CollectJS_GetAccessoriesIDs($IBLOCK_ID,$arProducts,$params);
 }
 ?>
 

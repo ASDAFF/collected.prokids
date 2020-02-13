@@ -7,7 +7,7 @@ if(!CModule::IncludeModule('collected.devlibrary'))
 	return;
 
 $arParams['FILTER_PROP_SCROLL_CNT'] = 10;
-$arParams['RSGOPRO_FILTER_NAME'] = 'PRICE_GROUPS';
+$arParams['COLLECTPRO_FILTER_NAME'] = 'PRICE_GROUPS';
 
 $arResult = CollectDevLibResultModifier::CatalogSmartFilter($arResult);
 
@@ -122,8 +122,8 @@ foreach($arResult['ITEMS'] as $key => $arItem)
 			$putKey = false;
 			$arControlsNAME = array();
 			foreach($arrDiapazons as $kluch => $arDiapazon) {
-				$arrDiapazons[$kluch]['CONTROL_ID'] = $arParams['RSGOPRO_FILTER_NAME'].'_'.abs(crc32($arItem['ID'].$kluch));
-				$arrDiapazons[$kluch]['CONTROL_NAME'] = $arParams['RSGOPRO_FILTER_NAME'].'_'.abs(crc32($arItem['ID'].$kluch));
+				$arrDiapazons[$kluch]['CONTROL_ID'] = $arParams['COLLECTPRO_FILTER_NAME'].'_'.abs(crc32($arItem['ID'].$kluch));
+				$arrDiapazons[$kluch]['CONTROL_NAME'] = $arParams['COLLECTPRO_FILTER_NAME'].'_'.abs(crc32($arItem['ID'].$kluch));
 				$arControlsNAME[] = $arrDiapazons[$kluch]['CONTROL_NAME'];
 				if($arDiapazon['MIN'] <= $arItem['VALUES']['MIN']['VALUE'] && $arDiapazon['MAX'] >= $arItem['VALUES']['MIN']['VALUE']) {
 					$putKey = true;

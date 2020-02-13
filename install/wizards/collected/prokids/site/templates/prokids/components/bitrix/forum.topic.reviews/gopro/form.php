@@ -6,7 +6,7 @@ if(empty($arResult['ERROR_MESSAGE']) && !empty($arResult['OK_MESSAGE']))
 }
 
 ?><div class="reviewform noned"><?
-	?><form action="<?=POST_FORM_ACTION_URI?>#postform" name="<?=$arParams['FORM_ID']?>" id="<?=$arParams['FORM_ID']?>" method="POST" enctype="multipart/form-data" onsubmit="return RSGoPro_SummComment(this);"><?
+	?><form action="<?=POST_FORM_ACTION_URI?>#postform" name="<?=$arParams['FORM_ID']?>" id="<?=$arParams['FORM_ID']?>" method="POST" enctype="multipart/form-data" onsubmit="return CollectJS_SummComment(this);"><?
 		$frame = $this->createFrame()->begin('');
 		
 		?><input type="hidden" name="index" value="<?=htmlspecialcharsbx($arParams['form_index'])?>" /><?

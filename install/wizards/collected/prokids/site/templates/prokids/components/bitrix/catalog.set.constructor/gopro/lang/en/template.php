@@ -19,7 +19,7 @@ $MESS['CATALOG_SET_BUY1CLICK'] = 'Buy 1 click';
 
 $MESS['CATALOG_SET_CANT_BUY'] = 'This set is not available for purchase';
 
-$MESS['RSGOPRO.SET_PROD_ID'] = 'Product ID';
-$MESS['RSGOPRO.SET_PROD_NAME'] = 'Product name';
-$MESS['RSGOPRO.SET_PROD_LINK'] = 'Link to product';
-$MESS['RSGOPRO.SET_NABOR'] = 'Purchase a set';
+$MESS['COLLECTPRO.SET_PROD_ID'] = 'Product ID';
+$MESS['COLLECTPRO.SET_PROD_NAME'] = 'Product name';
+$MESS['COLLECTPRO.SET_PROD_LINK'] = 'Link to product';
+$MESS['COLLECTPRO.SET_NABOR'] = 'Purchase a set';

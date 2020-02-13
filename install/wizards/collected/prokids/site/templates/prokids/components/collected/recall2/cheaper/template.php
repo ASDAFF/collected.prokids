@@ -53,7 +53,7 @@ if($arResult['GOOD_SEND']=='Y') {
 		// /CAPTCHA
 		
 		?><div class="line buttons clearfix"><?
-			?><input class="btn btn1" type="submit" name="submit" value="<?=GetMessage('MSG_SUBMIT')?>" onclick="return RSGoPro_CheaperBeforeSend();" /><?
+			?><input class="btn btn1" type="submit" name="submit" value="<?=GetMessage('MSG_SUBMIT')?>" onclick="return CollectJS_CheaperBeforeSend();" /><?
 		?></div><?
 		
 	?></form><?
@@ -61,7 +61,7 @@ if($arResult['GOOD_SEND']=='Y') {
 ?></div><?
 
 ?><script>
-function RSGoPro_CheaperBeforeSend()
+function CollectJS_CheaperBeforeSend()
 {
 	var value = $('.fancybox-inner').find('textarea[name="RS_AUTHOR_COMMENT"]').html();
 	value = value + '\n' +

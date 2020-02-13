@@ -1,16 +1,16 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-global $rsGoProViewedFilter;
-$rsGoProViewedFilter = array();
+global $rsCollectProViewedFilter;
+$rsCollectProViewedFilter = array();
 if( is_array($templateData['ITEMS']) && count($templateData['ITEMS'])>0 )
 {
 	foreach($templateData['ITEMS'] as $arItem)
 	{
-		$rsGoProViewedFilter['ID'][] = $arItem['ID'];
+		$rsCollectProViewedFilter['ID'][] = $arItem['ID'];
 	}
 }
 
-if( (is_array($rsGoProViewedFilter['ID']) && count($rsGoProViewedFilter['ID'])<1) || empty($rsGoProViewedFilter['ID']) )
+if( (is_array($rsCollectProViewedFilter['ID']) && count($rsCollectProViewedFilter['ID'])<1) || empty($rsCollectProViewedFilter['ID']) )
 {
-	$rsGoProViewedFilter['ID'] = array( '0' );
+	$rsCollectProViewedFilter['ID'] = array( '0' );
 }

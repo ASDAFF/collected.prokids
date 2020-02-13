@@ -98,7 +98,7 @@
 					}
 				}
 				if(is_array($arResult['NOT_GRUPED_PROPS']['CODES']) && count($arResult['NOT_GRUPED_PROPS']['CODES'])>0 && $arResult['NOT_GRUPED_PROPS']['SHOW']=='Y') {
-					?><tr class="group back1 name" data-groupcode="rsgopro_other777"><?
+					?><tr class="group back1 name" data-groupcode="rscollectpro_other777"><?
 						?><td class="back1" valign="top">&nbsp;</td><?
 						$i=0;
 						do {

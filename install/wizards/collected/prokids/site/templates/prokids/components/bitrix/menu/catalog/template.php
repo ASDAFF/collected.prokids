@@ -1,8 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
 
-if(!function_exists('RSGoProCatalogMenuElement')) {
-	function RSGoProCatalogMenuElement($ELEMENT_ID=0,$arParams) {
+if(!function_exists('CollectProCatalogMenuElement')) {
+	function CollectProCatalogMenuElement($ELEMENT_ID=0,$arParams) {
 		global $APPLICATION;
 		if(IntVal($ELEMENT_ID)>0) {
 			?><!-- element in menu --><ul class="elementinmenu lvl5"><?
@@ -67,17 +67,17 @@ $APPLICATION->IncludeComponent(
 if(is_array($arResult) && count($arResult)>0) {
 	?><div class="catalogmenucolumn"><?
 		?><ul class="catalogmenu clearfix"><?
-			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('RSGOPRO_CATALOG')?><i class="menu icon<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"></i></a><?
+			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('COLLECTPRO_CATALOG')?><i class="menu icon<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"></i></a><?
 			?><ul class="first clearfix lvl1<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"><?
 			$previousLevel = 0;
 			$index = 1;
-			$max = $arParams['RSGOPRO_MAX_ITEM'];
+			$max = $arParams['COLLECTPRO_MAX_ITEM'];
 			$last_lvl1 = false;
 			foreach($arResult as $arItem){
 				if($previousLevel>0 && $arItem['DEPTH_LEVEL']<$previousLevel){
 					echo str_repeat('</ul></li><!-- the end -->', ($previousLevel - $arItem['DEPTH_LEVEL'] - 1));
 					if($arItem['DEPTH_LEVEL']==1 && $last_lvl1!==false && $arResult[$last_lvl1]['PARAMS']['ELEMENT']=='Y'){
-						RSGoProCatalogMenuElement($arResult[$last_lvl1]['PARAMS']['ELEMENT_ID'],$arParams);
+						CollectProCatalogMenuElement($arResult[$last_lvl1]['PARAMS']['ELEMENT_ID'],$arParams);
 					}
 					echo '</ul></li>';
 				}
@@ -106,18 +106,18 @@ if(is_array($arResult) && count($arResult)>0) {
 			if($previousLevel>1){
 				echo str_repeat('</ul></li>', ($previousLevel-2) );
 				if($last_lvl1!==false && $arResult[$last_lvl1]['PARAMS']['ELEMENT']=='Y'){
-					RSGoProCatalogMenuElement($arResult[$last_lvl1]['PARAMS']['ELEMENT_ID'],$arParams);
+					CollectProCatalogMenuElement($arResult[$last_lvl1]['PARAMS']['ELEMENT_ID'],$arParams);
 				}
 				echo '</ul></li>';
 			}
 			if($index>($max+1)){
-				?><li class="first morelink lastchild"><a href="<?=$arParams['CATALOG_PATH']?>" class="first morelink"><?=GetMessage('RSGOPRO_MORE')?><i class="icon pngicons"></i></a></li><?
+				?><li class="first morelink lastchild"><a href="<?=$arParams['CATALOG_PATH']?>" class="first morelink"><?=GetMessage('COLLECTPRO_MORE')?><i class="icon pngicons"></i></a></li><?
 			}
 			?></ul></li><?
 		?></ul><?
 		
 		?><ul class="catalogmenusmall clearfix"><?
-			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('RSGOPRO_CATALOG')?><i class="menu icon"></i></a><?
+			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('COLLECTPRO_CATALOG')?><i class="menu icon"></i></a><?
 			?><ul class="first clearfix lvl1 noned"><?
 				foreach($arResult as $arItem){
 					if($arItem['DEPTH_LEVEL'] == 1){

@@ -1,7 +1,7 @@
 <?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)die();
 
 $this->setFrameMode(true);
-?><form name="<?=$arResult['FILTER_NAME'].'_form'?>" action="<?=$arResult['FORM_ACTION']?>" method="get" class="smartfilter" onsubmit="return RSGoPro_FilterOnSubmitForm();"><?
+?><form name="<?=$arResult['FILTER_NAME'].'_form'?>" action="<?=$arResult['FORM_ACTION']?>" method="get" class="smartfilter" onsubmit="return CollectJS_FilterOnSubmitForm();"><?
 	foreach($arResult['HIDDEN'] as $arItem) {
 		?><input <?
 			?>type="hidden" <?

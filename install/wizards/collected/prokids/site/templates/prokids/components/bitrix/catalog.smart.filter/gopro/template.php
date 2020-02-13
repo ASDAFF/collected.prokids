@@ -5,7 +5,7 @@
 
 $this->setFrameMode(true);
 
-?><form name="<?=$arResult['FILTER_NAME'].'_form'?>" action="<?=$arResult['FORM_ACTION']?>" method="get" class="smartfilter" onsubmit="return RSGoPro_FilterOnSubmitForm();"><?
+?><form name="<?=$arResult['FILTER_NAME'].'_form'?>" action="<?=$arResult['FORM_ACTION']?>" method="get" class="smartfilter" onsubmit="return CollectJS_FilterOnSubmitForm();"><?
 	foreach($arResult['HIDDEN'] as $arItem)
 	{
 		?><input <?
@@ -138,7 +138,7 @@ $this->setFrameMode(true);
 												?>name="<?=$arItem['GROUP_VALUES']['PRICE_GROUP_DIAPAZONS'][$keyD]['CONTROL_NAME']?>" <?
 												?>id="<?=$arItem['GROUP_VALUES']['PRICE_GROUP_DIAPAZONS'][$keyD]['CONTROL_ID']?>" <?
 												if($groupValue['SELECTED'] == 'Y'):?> checked="checked"<?endif;
-												?>onclick="RSGoPro_priceGoupClick()" <?
+												?>onclick="CollectJS_priceGoupClick()" <?
 												?>/><?
 											?><label for="<?=$arItem['GROUP_VALUES']['PRICE_GROUP_DIAPAZONS'][$keyD]['CONTROL_ID']?>"<?if($groupValue['SELECTED'] == 'Y'):?> class="label_checked"<?endif;?>><span><?=$groupValue['NAME1']?></span></label><?
 										?></li><?

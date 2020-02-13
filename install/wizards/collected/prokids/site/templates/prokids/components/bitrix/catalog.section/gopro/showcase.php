@@ -362,7 +362,7 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
 	}
 	if($arParams['IS_AJAXPAGES']=='Y')
 	{
-		?><script>RSGoPro_JSPReinit('.prices_jscrollpane',1)</script><?
+		?><script>CollectJS_JSPReinit('.prices_jscrollpane',1)</script><?
 		$this->EndViewTarget();
 		$templateData['showcaseview'] = $APPLICATION->GetViewContent('showcaseview');
 	}

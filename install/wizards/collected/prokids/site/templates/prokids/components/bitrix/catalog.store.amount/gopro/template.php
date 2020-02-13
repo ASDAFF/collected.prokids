@@ -73,7 +73,7 @@ if(isset($arResult['IS_SKU']) && $arResult['IS_SKU'] == 1) {
 ?></div><?
 
 ?><script>
-RSGoPro_STOCK = {
+CollectJS_STOCK = {
 	'<?=$arParams['~ELEMENT_ID']?>' : {
 		'QUANTITY' : <?=json_encode($arParams['DATA_QUANTITY'])?>,
 		'USE_MIN_AMOUNT' : <?=( $arParams['GOPRO_GOPRO_USE_MIN_AMOUNT']=='Y' ? 'true' : 'false' )?>,
