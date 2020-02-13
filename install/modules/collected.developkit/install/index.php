@@ -32,7 +32,7 @@ Class collected_developkit extends CModule
             $this->MODULE_VERSION_DATE = "2013.01.01";
         }
 
-		$this->MODULE_NAME = GetMessage("INSTALL_NAME");
+		$this->MODULE_NAME = "Набор компонентов для разработки";
 		$this->MODULE_DESCRIPTION = GetMessage("INSTALL_DESCRIPTION");
 		$this->PARTNER_NAME = GetMessage("INSTALL_COPMPANY_NAME");
         $this->PARTNER_URI  = "https://asdaff.github.io/";
